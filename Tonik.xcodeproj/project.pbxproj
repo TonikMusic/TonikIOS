@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B2812952326CE5400B1FBD4 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812942326CE5400B1FBD4 /* UIButtonExt.swift */; };
+		2B2812952326CE5400B1FBD4 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812942326CE5400B1FBD4 /* Button.swift */; };
 		2B2812972326CE7C00B1FBD4 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812962326CE7C00B1FBD4 /* UIViewExt.swift */; };
 		2B2812992326CE9000B1FBD4 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812982326CE8F00B1FBD4 /* UIViewControllerExt.swift */; };
-		2B28129B2326CED200B1FBD4 /* UIViewTextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B28129A2326CED200B1FBD4 /* UIViewTextFieldExt.swift */; };
+		2B28129B2326CED200B1FBD4 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B28129A2326CED200B1FBD4 /* TextField.swift */; };
 		2B28129D2326CF3500B1FBD4 /* KeyBoardExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B28129C2326CF3500B1FBD4 /* KeyBoardExt.swift */; };
 		2B28129F2326CF9A00B1FBD4 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B28129E2326CF9A00B1FBD4 /* RegistrationView.swift */; };
 		2B2812A12326CFA700B1FBD4 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812A02326CFA700B1FBD4 /* Networking.swift */; };
@@ -32,10 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B2812942326CE5400B1FBD4 /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
+		2B2812942326CE5400B1FBD4 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		2B2812962326CE7C00B1FBD4 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		2B2812982326CE8F00B1FBD4 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
-		2B28129A2326CED200B1FBD4 /* UIViewTextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewTextFieldExt.swift; sourceTree = "<group>"; };
+		2B28129A2326CED200B1FBD4 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		2B28129C2326CF3500B1FBD4 /* KeyBoardExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardExt.swift; sourceTree = "<group>"; };
 		2B28129E2326CF9A00B1FBD4 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		2B2812A02326CFA700B1FBD4 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
@@ -79,10 +79,10 @@
 		2B2812912326CCB500B1FBD4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				2B2812942326CE5400B1FBD4 /* UIButtonExt.swift */,
+				2B2812942326CE5400B1FBD4 /* Button.swift */,
 				2B2812962326CE7C00B1FBD4 /* UIViewExt.swift */,
 				2B2812982326CE8F00B1FBD4 /* UIViewControllerExt.swift */,
-				2B28129A2326CED200B1FBD4 /* UIViewTextFieldExt.swift */,
+				2B28129A2326CED200B1FBD4 /* TextField.swift */,
 				2B28129C2326CF3500B1FBD4 /* KeyBoardExt.swift */,
 			);
 			path = Extension;
@@ -251,9 +251,9 @@
 				2BE60B192318414600262EE1 /* AppDelegate.swift in Sources */,
 				2B2812A12326CFA700B1FBD4 /* Networking.swift in Sources */,
 				2B28129D2326CF3500B1FBD4 /* KeyBoardExt.swift in Sources */,
-				2B28129B2326CED200B1FBD4 /* UIViewTextFieldExt.swift in Sources */,
+				2B28129B2326CED200B1FBD4 /* TextField.swift in Sources */,
 				2B2812972326CE7C00B1FBD4 /* UIViewExt.swift in Sources */,
-				2B2812952326CE5400B1FBD4 /* UIButtonExt.swift in Sources */,
+				2B2812952326CE5400B1FBD4 /* Button.swift in Sources */,
 				2B28129F2326CF9A00B1FBD4 /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
