@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2BE60B192318414600262EE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B182318414600262EE1 /* AppDelegate.swift */; };
 		2BE60B1B2318414600262EE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B1A2318414600262EE1 /* ViewController.swift */; };
-		2BE60B1E2318414600262EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BE60B1C2318414600262EE1 /* Main.storyboard */; };
 		2BE60B202318414800262EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BE60B1F2318414800262EE1 /* Assets.xcassets */; };
 		2BE60B232318414800262EE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BE60B212318414800262EE1 /* LaunchScreen.storyboard */; };
 		2BE60B2E2318414800262EE1 /* TonikTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B2D2318414800262EE1 /* TonikTests.swift */; };
@@ -29,7 +28,6 @@
 		2BE60B152318414600262EE1 /* Tonik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tonik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BE60B182318414600262EE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BE60B1A2318414600262EE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2BE60B1D2318414600262EE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2BE60B1F2318414800262EE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BE60B222318414800262EE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BE60B242318414800262EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,7 +77,6 @@
 			children = (
 				2BE60B182318414600262EE1 /* AppDelegate.swift */,
 				2BE60B1A2318414600262EE1 /* ViewController.swift */,
-				2BE60B1C2318414600262EE1 /* Main.storyboard */,
 				2BE60B1F2318414800262EE1 /* Assets.xcassets */,
 				2BE60B212318414800262EE1 /* LaunchScreen.storyboard */,
 				2BE60B242318414800262EE1 /* Info.plist */,
@@ -179,7 +176,6 @@
 			files = (
 				2BE60B232318414800262EE1 /* LaunchScreen.storyboard in Resources */,
 				2BE60B202318414800262EE1 /* Assets.xcassets in Resources */,
-				2BE60B1E2318414600262EE1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +217,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2BE60B1C2318414600262EE1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2BE60B1D2318414600262EE1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2BE60B212318414800262EE1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -361,7 +349,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4E3GPM4HDT;
+				DEVELOPMENT_TEAM = 2D25YZNJAC;
 				INFOPLIST_FILE = Tonik/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -379,7 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4E3GPM4HDT;
+				DEVELOPMENT_TEAM = 2D25YZNJAC;
 				INFOPLIST_FILE = Tonik/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
