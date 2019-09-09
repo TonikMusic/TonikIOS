@@ -54,6 +54,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B2812902326CC7A00B1FBD4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2BE60B1A2318414600262EE1 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2B2812912326CCB500B1FBD4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2B2812922326CD5100B1FBD4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2B2812932326CD5E00B1FBD4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		2BE60B0C2318414600262EE1 = {
 			isa = PBXGroup;
 			children = (
@@ -76,7 +105,10 @@
 			isa = PBXGroup;
 			children = (
 				2BE60B182318414600262EE1 /* AppDelegate.swift */,
-				2BE60B1A2318414600262EE1 /* ViewController.swift */,
+				2B2812932326CD5E00B1FBD4 /* Networking */,
+				2B2812922326CD5100B1FBD4 /* Views */,
+				2B2812902326CC7A00B1FBD4 /* ViewControllers */,
+				2B2812912326CCB500B1FBD4 /* Extension */,
 				2BE60B1F2318414800262EE1 /* Assets.xcassets */,
 				2BE60B212318414800262EE1 /* LaunchScreen.storyboard */,
 				2BE60B242318414800262EE1 /* Info.plist */,
