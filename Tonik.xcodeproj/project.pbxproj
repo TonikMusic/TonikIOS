@@ -14,8 +14,10 @@
 		2B28129D2326CF3500B1FBD4 /* KeyBoardExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B28129C2326CF3500B1FBD4 /* KeyBoardExt.swift */; };
 		2B28129F2326CF9A00B1FBD4 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B28129E2326CF9A00B1FBD4 /* RegistrationView.swift */; };
 		2B2812A12326CFA700B1FBD4 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812A02326CFA700B1FBD4 /* Networking.swift */; };
+		2B2812A32328333E00B1FBD4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812A22328333E00B1FBD4 /* ProfileViewController.swift */; };
+		2B2812A52328335900B1FBD4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812A42328335900B1FBD4 /* SettingsViewController.swift */; };
 		2BE60B192318414600262EE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B182318414600262EE1 /* AppDelegate.swift */; };
-		2BE60B1B2318414600262EE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B1A2318414600262EE1 /* ViewController.swift */; };
+		2BE60B1B2318414600262EE1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B1A2318414600262EE1 /* HomeViewController.swift */; };
 		2BE60B202318414800262EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BE60B1F2318414800262EE1 /* Assets.xcassets */; };
 		2BE60B232318414800262EE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BE60B212318414800262EE1 /* LaunchScreen.storyboard */; };
 		2BE60B2E2318414800262EE1 /* TonikTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B2D2318414800262EE1 /* TonikTests.swift */; };
@@ -39,9 +41,11 @@
 		2B28129C2326CF3500B1FBD4 /* KeyBoardExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardExt.swift; sourceTree = "<group>"; };
 		2B28129E2326CF9A00B1FBD4 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		2B2812A02326CFA700B1FBD4 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		2B2812A22328333E00B1FBD4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2B2812A42328335900B1FBD4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2BE60B152318414600262EE1 /* Tonik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tonik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BE60B182318414600262EE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2BE60B1A2318414600262EE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2BE60B1A2318414600262EE1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2BE60B1F2318414800262EE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BE60B222318414800262EE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BE60B242318414800262EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,7 +75,9 @@
 		2B2812902326CC7A00B1FBD4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2BE60B1A2318414600262EE1 /* ViewController.swift */,
+				2BE60B1A2318414600262EE1 /* HomeViewController.swift */,
+				2B2812A22328333E00B1FBD4 /* ProfileViewController.swift */,
+				2B2812A42328335900B1FBD4 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -246,8 +252,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BE60B1B2318414600262EE1 /* ViewController.swift in Sources */,
+				2BE60B1B2318414600262EE1 /* HomeViewController.swift in Sources */,
 				2B2812992326CE9000B1FBD4 /* UIViewControllerExt.swift in Sources */,
+				2B2812A52328335900B1FBD4 /* SettingsViewController.swift in Sources */,
+				2B2812A32328333E00B1FBD4 /* ProfileViewController.swift in Sources */,
 				2BE60B192318414600262EE1 /* AppDelegate.swift in Sources */,
 				2B2812A12326CFA700B1FBD4 /* Networking.swift in Sources */,
 				2B28129D2326CF3500B1FBD4 /* KeyBoardExt.swift in Sources */,
