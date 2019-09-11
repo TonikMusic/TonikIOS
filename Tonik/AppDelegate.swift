@@ -16,8 +16,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+            
+        let home = HomeViewController()
+        var homeIcon = UIImage(named: "home")
+        homeIcon = homeIcon?.scaled(with: CGFloat(0.25))!.withRenderingMode(.alwaysOriginal)
+        home.view.backgroundColor = .white
+        home.tabBarItem = UITabBarItem(title: "Home", image: homeIcon, tag: 0)
+        
+        let profile = ProfileViewController()
+        var profileIcon = UIImage(named: "profile")
+        profileIcon = profileIcon?.scaled(with: CGFloat(0.25))!.withRenderingMode(.alwaysOriginal)
+        profile.view.backgroundColor = .white
+        profile.tabBarItem = UITabBarItem(title: "Profile", image: profileIcon, tag: 1)
+            
+        let settings = SettingsViewController()
+        var settingsIcon = UIImage(named: "settings")
+        settingsIcon = settingsIcon?.scaled(with: CGFloat(0.25))!.withRenderingMode(.alwaysOriginal)
+        settings.view.backgroundColor = .white
+        settings.tabBarItem = UITabBarItem(title: "Settings", image:settingsIcon, tag: 2)
+        
+            
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [home, profile, settings]
+        tabBarController.selectedIndex = 0
+        
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+
         return true
     }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -42,5 +72,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension UIImage {
+    
+    func scaled(with scale: CGFloat) -> UIImage? {
+        // size has to be integer, otherwise it could get white lines
+        let size = CGSize(width: floor(self.size.width * scale), height: floor(self.size.height * scale))
+        UIGraphicsBeginImageContext(size)
+        draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
 }
 

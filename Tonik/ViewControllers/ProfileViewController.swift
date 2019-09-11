@@ -1,23 +1,21 @@
 //
-//  ViewController.swift
+//  ProfileViewController.swift
 //  Tonik
 //
-//  Created by Wesley Espinoza on 8/29/19.
+//  Created by Wesley Espinoza on 9/10/19.
 //  Copyright © 2019 HazeWritesCode. All rights reserved.
 //
 
 import UIKit
 import Foundation
 
-class ViewController: UIViewController {
-
+class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
     }
-
-
+    
+    
 }
-
