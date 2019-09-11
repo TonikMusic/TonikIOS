@@ -20,7 +20,7 @@ extension UIView {
         layer.shadowRadius = 5
     }
     
-    // NOTE: This functtion gives a custom cell shadow affect
+    // NOTE: This function gives a custom cell shadow affect
     func dropCellShadow(scale: Bool) {
         layer.masksToBounds = false
         layer.shadowColor = UIColor.black.cgColor
@@ -30,5 +30,17 @@ extension UIView {
         layer.shadowRadius = 8
     }
     
+    
+    // NOTE: This helper method creates and contraints to views 
+    func add(subview: UIView, createConstraints: (_ view: UIView, _ parent: UIView) -> [NSLayoutConstraint]) {
+        addSubview(subview)
+        
+        subview.activate(constraints: createConstraints(subview, self))
+    }
+    
+    func activate(constraints: [NSLayoutConstraint]) {
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(constraints)
+    }
 }
 
