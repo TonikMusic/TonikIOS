@@ -16,6 +16,8 @@
 		2B2812A12326CFA700B1FBD4 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812A02326CFA700B1FBD4 /* Networking.swift */; };
 		2B2812A32328333E00B1FBD4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812A22328333E00B1FBD4 /* ProfileViewController.swift */; };
 		2B2812A52328335900B1FBD4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812A42328335900B1FBD4 /* SettingsViewController.swift */; };
+		2B2812A72329B40900B1FBD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812A62329B40900B1FBD4 /* TabBarController.swift */; };
+		2B2812A92329B6CF00B1FBD4 /* MiniPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812A82329B6CF00B1FBD4 /* MiniPlayerView.swift */; };
 		2BE60B192318414600262EE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B182318414600262EE1 /* AppDelegate.swift */; };
 		2BE60B1B2318414600262EE1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B1A2318414600262EE1 /* HomeViewController.swift */; };
 		2BE60B202318414800262EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BE60B1F2318414800262EE1 /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 		2B2812A02326CFA700B1FBD4 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2B2812A22328333E00B1FBD4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2B2812A42328335900B1FBD4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2B2812A62329B40900B1FBD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		2B2812A82329B6CF00B1FBD4 /* MiniPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerView.swift; sourceTree = "<group>"; };
 		2BE60B152318414600262EE1 /* Tonik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tonik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BE60B182318414600262EE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BE60B1A2318414600262EE1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 				2BE60B1A2318414600262EE1 /* HomeViewController.swift */,
 				2B2812A22328333E00B1FBD4 /* ProfileViewController.swift */,
 				2B2812A42328335900B1FBD4 /* SettingsViewController.swift */,
+				2B2812A62329B40900B1FBD4 /* TabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				2B28129E2326CF9A00B1FBD4 /* RegistrationView.swift */,
+				2B2812A82329B6CF00B1FBD4 /* MiniPlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,9 +258,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2812A72329B40900B1FBD4 /* TabBarController.swift in Sources */,
 				2BE60B1B2318414600262EE1 /* HomeViewController.swift in Sources */,
 				2B2812992326CE9000B1FBD4 /* UIViewControllerExt.swift in Sources */,
 				2B2812A52328335900B1FBD4 /* SettingsViewController.swift in Sources */,
+				2B2812A92329B6CF00B1FBD4 /* MiniPlayerView.swift in Sources */,
 				2B2812A32328333E00B1FBD4 /* ProfileViewController.swift in Sources */,
 				2BE60B192318414600262EE1 /* AppDelegate.swift in Sources */,
 				2B2812A12326CFA700B1FBD4 /* Networking.swift in Sources */,

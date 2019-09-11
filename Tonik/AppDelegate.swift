@@ -17,8 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // NOTE: Sets a UIWindow to window
         window = UIWindow(frame: UIScreen.main.bounds)
-            
+        // NOTE: TheViewControllers are instanciated with corresponding images
+        
         let home = HomeViewController()
         var homeIcon = UIImage(named: "home")
         homeIcon = homeIcon?.scaled(with: CGFloat(0.25))!.withRenderingMode(.alwaysOriginal)
@@ -37,11 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         settings.view.backgroundColor = .white
         settings.tabBarItem = UITabBarItem(title: "Settings", image:settingsIcon, tag: 2)
         
-            
-        let tabBarController = UITabBarController()
+        // NOTE: set up of the TabBarController and adding the viewControllers
+        let tabBarController = TabBarController()
         tabBarController.viewControllers = [home, profile, settings]
         tabBarController.selectedIndex = 0
         
+        // NOTE: Setting the root
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
 
