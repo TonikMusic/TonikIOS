@@ -23,16 +23,16 @@ class SignUpView: UIView {
     // NOTE: this function constraints the view components
     private func setUpView() {
         
-        let h = self.frame.height
-        let w = self.frame.width
+//        let h = self.frame.height
+//        let w = self.frame.width
         
         // NOTE: view components
 //        let logo = CustomImage.image(name:  "logo")
         
         
-        self.add(subview: logo) {(p, v) in [
-            
-            ]}
+//        self.add(subview: logo) {(p, v) in [
+//
+//            ]}
         
         
     }
