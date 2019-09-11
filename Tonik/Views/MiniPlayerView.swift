@@ -22,10 +22,13 @@ class MiniPlayer: UIView {
     }
     
     private func setUpView() {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "music")
+        let MusicImageView = UIImageView()
+        MusicImageView.image = UIImage(named: "music")
         
-        
+        self.add(subview: MusicImageView) { (v, p) in [
+            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -8),
+            v.leadingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.leadingAnchor, constant: 8)
+            ]}
     }
     
 }

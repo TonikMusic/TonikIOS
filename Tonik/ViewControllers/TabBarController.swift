@@ -13,5 +13,14 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpMiniPlayer()
+    }
+    
+    func setUpMiniPlayer(){
+        let miniPlayer = MiniPlayer()
+        
+        view.add(subview: miniPlayer) { (v, p) in [
+            
+            ]}
     }
 }
