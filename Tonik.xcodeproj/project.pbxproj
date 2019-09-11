@@ -19,6 +19,7 @@
 		2BE60B202318414800262EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BE60B1F2318414800262EE1 /* Assets.xcassets */; };
 		2BE60B232318414800262EE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BE60B212318414800262EE1 /* LaunchScreen.storyboard */; };
 		2BE60B2E2318414800262EE1 /* TonikTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B2D2318414800262EE1 /* TonikTests.swift */; };
+		74D0658F2328F085006AA127 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D0658E2328F085006AA127 /* Label.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		2BE60B292318414800262EE1 /* TonikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TonikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BE60B2D2318414800262EE1 /* TonikTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TonikTests.swift; sourceTree = "<group>"; };
 		2BE60B2F2318414800262EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74D0658E2328F085006AA127 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				2B2812942326CE5400B1FBD4 /* Button.swift */,
+				74D0658E2328F085006AA127 /* Label.swift */,
 				2B2812962326CE7C00B1FBD4 /* UIViewExt.swift */,
 				2B2812982326CE8F00B1FBD4 /* UIViewControllerExt.swift */,
 				2B28129A2326CED200B1FBD4 /* TextField.swift */,
@@ -254,6 +257,7 @@
 				2B28129B2326CED200B1FBD4 /* TextField.swift in Sources */,
 				2B2812972326CE7C00B1FBD4 /* UIViewExt.swift in Sources */,
 				2B2812952326CE5400B1FBD4 /* Button.swift in Sources */,
+				74D0658F2328F085006AA127 /* Label.swift in Sources */,
 				2B28129F2326CF9A00B1FBD4 /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
