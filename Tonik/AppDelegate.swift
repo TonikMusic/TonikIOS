@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         home.view.backgroundColor = .white
         home.tabBarItem = UITabBarItem(title: "Home", image: homeIcon, tag: 0)
         
+        home.setUpInitialColor(color: UIColor.lightGray)
+        
         let profile = ProfileViewController()
         var profileIcon = UIImage(named: "profile")
         profileIcon = profileIcon?.scaled(with: CGFloat(0.25))!.withRenderingMode(.alwaysOriginal)

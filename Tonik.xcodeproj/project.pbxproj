@@ -18,6 +18,7 @@
 		2B2812A52328335900B1FBD4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812A42328335900B1FBD4 /* SettingsViewController.swift */; };
 		2B2812A72329B40900B1FBD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812A62329B40900B1FBD4 /* TabBarController.swift */; };
 		2B2812A92329B6CF00B1FBD4 /* MiniPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812A82329B6CF00B1FBD4 /* MiniPlayerView.swift */; };
+		2B2812AB232BFDCD00B1FBD4 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2812AA232BFDCD00B1FBD4 /* UIColorExt.swift */; };
 		2BE60B192318414600262EE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B182318414600262EE1 /* AppDelegate.swift */; };
 		2BE60B1B2318414600262EE1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B1A2318414600262EE1 /* HomeViewController.swift */; };
 		2BE60B202318414800262EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BE60B1F2318414800262EE1 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		2B2812A42328335900B1FBD4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2B2812A62329B40900B1FBD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		2B2812A82329B6CF00B1FBD4 /* MiniPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerView.swift; sourceTree = "<group>"; };
+		2B2812AA232BFDCD00B1FBD4 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		2BE60B152318414600262EE1 /* Tonik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tonik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BE60B182318414600262EE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BE60B1A2318414600262EE1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				2B2812982326CE8F00B1FBD4 /* UIViewControllerExt.swift */,
 				2B28129A2326CED200B1FBD4 /* TextField.swift */,
 				2B28129C2326CF3500B1FBD4 /* KeyBoardExt.swift */,
+				2B2812AA232BFDCD00B1FBD4 /* UIColorExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				2B2812972326CE7C00B1FBD4 /* UIViewExt.swift in Sources */,
 				2B2812952326CE5400B1FBD4 /* Button.swift in Sources */,
 				74D0658F2328F085006AA127 /* Label.swift in Sources */,
+				2B2812AB232BFDCD00B1FBD4 /* UIColorExt.swift in Sources */,
 				2B28129F2326CF9A00B1FBD4 /* SignUpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
