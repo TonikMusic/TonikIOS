@@ -22,9 +22,11 @@ class MiniPlayer: UIView {
     }
     
     private func setUpView() {
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.lightGray.cgColor
         self.backgroundColor = UIColor.init(hexString: "#ededed", alpha: 1)
         let MPMusicImageView = UIImageView()
-        MPMusicImageView.image = UIImage(named: "music")?.scaled(with: 0.40)
+        MPMusicImageView.image = UIImage(named: "music")?.scaled(with: 0.50)
         
 
         let MPBackButton = UIButton()
@@ -42,27 +44,27 @@ class MiniPlayer: UIView {
         
         
         self.add(subview: MPMusicImageView) { (v, p) in [
-            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -8),
+            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -15),
             v.leadingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.leadingAnchor, constant: 8)
             ]}
         
         self.add(subview: MPMusicPlayingLabel) { (v, p) in [
-            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -15),
+            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -25),
             v.leadingAnchor.constraint(equalTo: MPMusicImageView.safeAreaLayoutGuide.trailingAnchor, constant: 8)
             ]}
         
         self.add(subview: MPBackButton) { (v, p) in [
-            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -8),
+            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             v.leadingAnchor.constraint(equalTo: MPMusicPlayingLabel.safeAreaLayoutGuide.trailingAnchor, constant: 90)
             ]}
         
         self.add(subview: MPPlayButton) { (v, p) in [
-            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -8),
+            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             v.leadingAnchor.constraint(equalTo: MPBackButton.safeAreaLayoutGuide.trailingAnchor, constant: 8)
             ]}
         
         self.add(subview: MPNextButton) { (v, p) in [
-            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -8),
+            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             v.leadingAnchor.constraint(equalTo: MPPlayButton.safeAreaLayoutGuide.trailingAnchor, constant: 8)
             ]}
     }
