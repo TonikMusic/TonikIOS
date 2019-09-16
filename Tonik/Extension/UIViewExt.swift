@@ -12,16 +12,25 @@ import UIKit
 extension UIView {
     
     // NOTE: This function gives any view a shadow affect
-    func dropShadow(scale: Bool) {
+    func dropShadow() {
         layer.masksToBounds = false
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.7
-        layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
-        layer.shadowRadius = 5
+        layer.shadowOpacity = 0.30
+        layer.shadowOffset = CGSize(width: 0.0, height: 9.0)
+        layer.shadowRadius = 3
     }
     
+    // NOTE: This funciton gives a custom shadow effect to target UIView
+    func dropCustomShadow(shadowColor: UIColor, shadowOpacity: Float, shadowOffsetWidth: Double = 0.0, shadowOffsetHeight: Double) {
+        layer.masksToBounds = false
+        layer.shadowColor = shadowColor.cgColor
+        layer.shadowOpacity = shadowOpacity
+        layer.shadowOffset = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight)
+        layer.shadowRadius = 3
+    }
+
     // NOTE: This function gives a custom cell shadow affect
-    func dropCellShadow(scale: Bool) {
+    func dropCellShadow() {
         layer.masksToBounds = false
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.7
@@ -38,6 +47,7 @@ extension UIView {
         subview.activate(constraints: createConstraints(subview, self))
     }
     
+    // NOTE: This funciton activates the given constraints
     func activate(constraints: [NSLayoutConstraint]) {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(constraints)

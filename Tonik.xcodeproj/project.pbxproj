@@ -25,7 +25,13 @@
 		2BE60B202318414800262EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BE60B1F2318414800262EE1 /* Assets.xcassets */; };
 		2BE60B232318414800262EE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BE60B212318414800262EE1 /* LaunchScreen.storyboard */; };
 		2BE60B2E2318414800262EE1 /* TonikTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B2D2318414800262EE1 /* TonikTests.swift */; };
+		74CBFD88232DB853006C7FCD /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CBFD87232DB853006C7FCD /* LogoView.swift */; };
+		74CBFD8A232EAB52006C7FCD /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CBFD89232EAB52006C7FCD /* Utilities.swift */; };
 		74D0658F2328F085006AA127 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D0658E2328F085006AA127 /* Label.swift */; };
+		74F0C485232C3DD600209B29 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F0C484232C3DD600209B29 /* Image.swift */; };
+		74F0C487232C43F200209B29 /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F0C486232C43F200209B29 /* LoginSignupViewController.swift */; };
+		74F0C489232C465800209B29 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F0C488232C465800209B29 /* UIImageExt.swift */; };
+		74F0C48B232C502D00209B29 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F0C48A232C502D00209B29 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +67,13 @@
 		2BE60B292318414800262EE1 /* TonikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TonikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BE60B2D2318414800262EE1 /* TonikTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TonikTests.swift; sourceTree = "<group>"; };
 		2BE60B2F2318414800262EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74CBFD87232DB853006C7FCD /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		74CBFD89232EAB52006C7FCD /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		74D0658E2328F085006AA127 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		74F0C484232C3DD600209B29 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		74F0C486232C43F200209B29 /* LoginSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
+		74F0C488232C465800209B29 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
+		74F0C48A232C502D00209B29 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +101,7 @@
 				2B2812A22328333E00B1FBD4 /* ProfileViewController.swift */,
 				2B2812A42328335900B1FBD4 /* SettingsViewController.swift */,
 				2B2812A62329B40900B1FBD4 /* TabBarController.swift */,
+				74F0C486232C43F200209B29 /* LoginSignupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -97,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				2B2812942326CE5400B1FBD4 /* Button.swift */,
+				74F0C484232C3DD600209B29 /* Image.swift */,
 				74D0658E2328F085006AA127 /* Label.swift */,
 				2B2812962326CE7C00B1FBD4 /* UIViewExt.swift */,
 				2B2812982326CE8F00B1FBD4 /* UIViewControllerExt.swift */,
@@ -104,6 +118,9 @@
 				2B28129C2326CF3500B1FBD4 /* KeyBoardExt.swift */,
 				2B2812AA232BFDCD00B1FBD4 /* UIColorExt.swift */,
 				2B2812AC232C0F2E00B1FBD4 /* CustomFlowLayout.swift */,
+				74F0C488232C465800209B29 /* UIImageExt.swift */,
+				74F0C48A232C502D00209B29 /* View.swift */,
+				74CBFD89232EAB52006C7FCD /* Utilities.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -113,6 +130,7 @@
 			children = (
 				2B28129E2326CF9A00B1FBD4 /* SignUpView.swift */,
 				2B2812A82329B6CF00B1FBD4 /* MiniPlayerView.swift */,
+				74CBFD87232DB853006C7FCD /* LogoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,8 +287,11 @@
 			files = (
 				2B2812A72329B40900B1FBD4 /* TabBarController.swift in Sources */,
 				2BE60B1B2318414600262EE1 /* HomeViewController.swift in Sources */,
+				74CBFD8A232EAB52006C7FCD /* Utilities.swift in Sources */,
 				2B2812AD232C0F2E00B1FBD4 /* CustomFlowLayout.swift in Sources */,
 				2B2812992326CE9000B1FBD4 /* UIViewControllerExt.swift in Sources */,
+				74CBFD88232DB853006C7FCD /* LogoView.swift in Sources */,
+				74F0C487232C43F200209B29 /* LoginSignupViewController.swift in Sources */,
 				2B2812A52328335900B1FBD4 /* SettingsViewController.swift in Sources */,
 				2B2812A92329B6CF00B1FBD4 /* MiniPlayerView.swift in Sources */,
 				2B2812A32328333E00B1FBD4 /* ProfileViewController.swift in Sources */,
@@ -278,10 +299,13 @@
 				2B2812A12326CFA700B1FBD4 /* Networking.swift in Sources */,
 				2B28129D2326CF3500B1FBD4 /* KeyBoardExt.swift in Sources */,
 				2B28129B2326CED200B1FBD4 /* TextField.swift in Sources */,
+				74F0C48B232C502D00209B29 /* View.swift in Sources */,
+				74F0C485232C3DD600209B29 /* Image.swift in Sources */,
 				2B2812972326CE7C00B1FBD4 /* UIViewExt.swift in Sources */,
 				2B2812952326CE5400B1FBD4 /* Button.swift in Sources */,
 				74D0658F2328F085006AA127 /* Label.swift in Sources */,
 				2B2812AB232BFDCD00B1FBD4 /* UIColorExt.swift in Sources */,
+				74F0C489232C465800209B29 /* UIImageExt.swift in Sources */,
 				2B28129F2326CF9A00B1FBD4 /* SignUpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2D25YZNJAC;
 				INFOPLIST_FILE = Tonik/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +482,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2D25YZNJAC;
 				INFOPLIST_FILE = Tonik/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -476,6 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4E3GPM4HDT;
 				INFOPLIST_FILE = TonikTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,6 +524,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4E3GPM4HDT;
 				INFOPLIST_FILE = TonikTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

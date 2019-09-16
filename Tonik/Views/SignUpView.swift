@@ -11,8 +11,15 @@ import UIKit
 
 class SignUpView: UIView {
     
+    // NOTE: instantiating view components
+    let userName = TextField.initTextBox(.red, .red, .red, 0, .clear, "Username", 30)
+    var signUpBtn = Button.customButton(title: "Next", titleColor: .white, cornerRadius: 1, backgroundColor: #colorLiteral(red: 0.3921568627, green: 0.01960784314, blue: 0.5607843137, alpha: 1))
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setUpView()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -22,17 +29,29 @@ class SignUpView: UIView {
     
     // NOTE: this function constraints the view components
     private func setUpView() {
+        self.backgroundColor = .white
+        self.layer.cornerRadius = 25
+        self.dropShadow()
         
-//        let h = self.frame.height
-//        let w = self.frame.width
-        
-        // NOTE: view components
-//        let logo = CustomImage.image(name:  "logo")
+        signUpBtn.frame = CGRect(x: 100, y: 100, width: 100, height: 0)
         
         
-//        self.add(subview: logo) {(p, v) in [
-//
-//            ]}
+        // NOTE: constrainting view components
+        self.add(subview: userName) { (v, p) in [
+            v.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
+            v.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20),
+            v.heightAnchor.constraint(equalToConstant: 30)
+            ]}
+        
+        self.add(subview: signUpBtn) { (v, p) in [
+            v.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            v.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            v.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
+            v.centerYAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+            
+            ]}
+        
+        signUpBtn.layer.cornerRadius = signUpBtn.frame.width / 2
         
         
     }
