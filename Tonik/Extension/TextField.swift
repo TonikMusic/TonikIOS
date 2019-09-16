@@ -64,7 +64,6 @@ class TextField: UITextField {
         textField.borderStyle = .none
         textField.layer.backgroundColor = backgroundColor.cgColor
         textField.font = UIFont.systemFont(ofSize: textSize)
-        textField.layer.cornerRadius = 25
         textField.layer.masksToBounds = true
         textField.layer.borderWidth = borderWidth
         textField.layer.borderColor = borderColor.cgColor
