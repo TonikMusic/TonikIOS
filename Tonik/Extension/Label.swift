@@ -12,7 +12,7 @@ import UIKit
 
 class Label: UILabel {
     
-    public static func label(title: String, textColor: UIColor, textSize: CGFloat) -> UILabel {
+    public static func customLabel(title: String, textColor: UIColor, textSize: CGFloat) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = textColor
