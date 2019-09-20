@@ -12,6 +12,8 @@ import UIKit
 
 class MiniPlayer: UIView {
     
+    var isMusicPlaying = false
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpView()
@@ -20,6 +22,20 @@ class MiniPlayer: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    @objc func playButtonTapped(button: UIButton){
+        if (button.tag == 0) {
+            button.setImage(UIImage(named: "pause")?.scaled(with: 0.35), for: .normal)
+            button.tag = 1
+        } else {
+            button.setImage(UIImage(named: "play")?.scaled(with: 0.35), for: .normal)
+            button.tag = 0
+        }
+    }
+    
+    
+    
     
     private func setUpView() {
         self.layer.borderWidth = 1
@@ -36,7 +52,9 @@ class MiniPlayer: UIView {
         MPNextButton.setImage(UIImage(named: "next")?.scaled(with: 0.35), for: .normal)
         
         let MPPlayButton = UIButton()
+        MPPlayButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
         MPPlayButton.setImage(UIImage(named: "play")?.scaled(with: 0.35), for: .normal)
+        MPPlayButton.tag = 0
         
         let MPMusicPlayingLabel = UILabel()
         MPMusicPlayingLabel.text = "No Music Playing"

@@ -10,19 +10,32 @@ import UIKit
 import Foundation
 
 class HomeViewController: UIViewController {
+    var collectionView: UICollectionView!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setUpNewsCollectionView()
     }
 
     
-    func setUp(){
-        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: CustomFlowLayout())
+    func setUpNewsCollectionView(){
+        
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - 25), collectionViewLayout: CustomFlowLayout())
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.register(NewsCollectionViewCell.self, forCellWithReuseIdentifier: NewsCollectionViewCell.reUSeID)
+        collectionView.register(FeaturedCollectionViewCell.self, forCellWithReuseIdentifier: FeaturedCollectionViewCell.reUSeID)
+        collectionView.backgroundColor = .white
+        view.addSubview(collectionView)
+        view.backgroundColor = .white
+        
+    }
+    
+    func insertCells(){
+        
     }
 
 }
@@ -32,12 +45,22 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = UICollectionViewCell()
+        var cell = UICollectionViewCell()
+        switch indexPath.row {
+        case 0:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCollectionViewCell.reUSeID, for: indexPath)
+            break
+        case 1:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedCollectionViewCell.reUSeID, for: indexPath)
+            break
+        default:
+            cell = UICollectionViewCell()
+        }
         return cell
     }
     
@@ -60,7 +83,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width - 15, height: collectionView.bounds.height / 8 )
+        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height )
     }
     
     
