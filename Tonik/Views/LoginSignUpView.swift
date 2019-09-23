@@ -12,18 +12,22 @@ import UIKit
 class LoginSignUpView: UIView {
     
     // NOTE: instantiating UIViews
-    let logoView = LogoView()
-    let userName = TextField.initTextBox(.clear, #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), 0, .clear, "", 16)
+    let userName = TextField.initTextBox(.clear, #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), 0, .clear, "Username", 16)
     let lineView1 = View.dropView(backgroundColor: #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 1))
     let email = TextField.initTextBox(.white, #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), 0, .clear, "Email or username", 16)
     let lineView2 = View.dropView(backgroundColor: #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 1))
     let password = TextField.initTextBox(.white, #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), 0, .clear, "Password", 16)
     let lineView3 = View.dropView(backgroundColor: #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 1))
-    let confirmPassword = TextField.initTextBox(.clear, #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), 0, .clear, "", 16)
+    let confirmPassword = TextField.initTextBox(.white, #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), 0, .clear, "Confirm Password", 16)
     let lineView4 = View.dropView(backgroundColor: #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 1))
     let loginSignUpBtn = Button.customButton(title: "Log In", titleColor: .white, cornerRadius: 30, backgroundColor: #colorLiteral(red: 0.3921568627, green: 0.01960784314, blue: 0.5607843137, alpha: 1))
     
-    
+    // NOTE: Setting constraint variables
+    var addTopPaddingToEmail: NSLayoutConstraint!
+    var addTopPaddingPassword: NSLayoutConstraint!
+    var addTopPaddingToConfirmPassword: NSLayoutConstraint!
+    var addTopPaddingTologinSignUpBtn: NSLayoutConstraint!
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,72 +48,85 @@ class LoginSignUpView: UIView {
         
         
         
-        
         // NOTE: constrainting view
-        self.add(subview: email) { (v, p) in [
-            //70
-            v.topAnchor.constraint(equalTo: p.safeAreaLayoutGuide.topAnchor, constant: 90),
-            v.leadingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            v.trailingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            v.heightAnchor.constraint(equalToConstant: 30)
-            ]}
         
-        self.add(subview: lineView2) { (v, p) in [
-            v.topAnchor.constraint(equalTo: email.bottomAnchor, constant: 0),
-            v.leadingAnchor.constraint(equalTo: email.leadingAnchor, constant: 0),
-            v.trailingAnchor.constraint(equalTo: email.trailingAnchor, constant: 0),
-            v.heightAnchor.constraint(equalTo: email.heightAnchor, constant: -28)
-            ]}
+        self.addSubview(userName)
+        userName.translatesAutoresizingMaskIntoConstraints = false
+        //90
+        userName.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: self.frame.height / 4 + 20).isActive = true
+        userName.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        userName.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        userName.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
-        self.add(subview: userName) { (v, p) in [
-            v.topAnchor.constraint(equalTo: email.topAnchor, constant: 0),
-            v.leadingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            v.trailingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            v.heightAnchor.constraint(equalToConstant: 30)
-            ]}
         
-        self.add(subview: lineView1) { (v, p) in [
-            v.topAnchor.constraint(equalTo: userName.bottomAnchor, constant: 0),
-            v.leadingAnchor.constraint(equalTo: userName.leadingAnchor, constant: 0),
-            v.trailingAnchor.constraint(equalTo: userName.trailingAnchor, constant: 0),
-            v.heightAnchor.constraint(equalTo: userName.heightAnchor, constant: -28)
-            ]}
+        self.addSubview(lineView1)
+        lineView1.translatesAutoresizingMaskIntoConstraints = false
+        lineView1.topAnchor.constraint(equalTo: userName.bottomAnchor, constant: 0).isActive = true
+        lineView1.leadingAnchor.constraint(equalTo: userName.leadingAnchor, constant: 0).isActive = true
+        lineView1.trailingAnchor.constraint(equalTo: userName.trailingAnchor, constant: 0).isActive = true
+        lineView1.heightAnchor.constraint(equalTo: userName.heightAnchor, constant: -28).isActive = true
         
-        self.add(subview: password) { (v, p) in [
-            v.topAnchor.constraint(equalTo: lineView2.bottomAnchor, constant: 20),
-            v.leadingAnchor.constraint(equalTo: lineView2.leadingAnchor, constant: 0),
-            v.trailingAnchor.constraint(equalTo: lineView2.trailingAnchor, constant: 0),
-            v.heightAnchor.constraint(equalToConstant: 30)
-            ]}
         
-        self.add(subview: lineView3) { (v, p) in [
-            v.topAnchor.constraint(equalTo: password.bottomAnchor, constant: 0),
-            v.leadingAnchor.constraint(equalTo: password.leadingAnchor, constant: 0),
-            v.trailingAnchor.constraint(equalTo: password.trailingAnchor, constant: 0),
-            v.heightAnchor.constraint(equalTo: password.heightAnchor, constant: -28)
-            ]}
+        self.addSubview(email)
+        email.translatesAutoresizingMaskIntoConstraints = false
+        addTopPaddingToEmail = email.topAnchor.constraint(equalTo: lineView1.topAnchor, constant: -30)
+        addTopPaddingToEmail.isActive = true
+        email.leadingAnchor.constraint(equalTo: userName.leadingAnchor, constant: 0).isActive = true
+        email.trailingAnchor.constraint(equalTo: userName.trailingAnchor, constant: 0).isActive = true
+        email.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
-        self.add(subview: confirmPassword) { (v, p) in [
-            v.topAnchor.constraint(equalTo: password.topAnchor, constant: 0),
-            v.leadingAnchor.constraint(equalTo: password.leadingAnchor, constant: 0),
-            v.trailingAnchor.constraint(equalTo: password.trailingAnchor, constant: 0),
-            v.heightAnchor.constraint(equalToConstant: 30)
-            ]}
         
-        self.add(subview: lineView4) { (v, p) in [
-            v.topAnchor.constraint(equalTo: confirmPassword.bottomAnchor, constant: 0),
-            v.leadingAnchor.constraint(equalTo: confirmPassword.leadingAnchor, constant: 0),
-            v.trailingAnchor.constraint(equalTo: confirmPassword.trailingAnchor, constant: 0),
-            v.heightAnchor.constraint(equalTo: confirmPassword.heightAnchor, constant: -28)
-            ]}
+        self.addSubview(lineView2)
+        lineView2.translatesAutoresizingMaskIntoConstraints = false
+        lineView2.topAnchor.constraint(equalTo: email.bottomAnchor, constant: 0).isActive = true
+        lineView2.leadingAnchor.constraint(equalTo: email.leadingAnchor, constant: 0).isActive = true
+        lineView2.trailingAnchor.constraint(equalTo: email.trailingAnchor, constant: 0).isActive = true
+        lineView2.heightAnchor.constraint(equalTo: email.heightAnchor, constant: -28).isActive = true
+    
         
-        self.add(subview: loginSignUpBtn) { (v, p) in [
-            v.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            v.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            v.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor, constant: 0),
-            v.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 0),
-            v.heightAnchor.constraint(equalToConstant: 58)
-            ]}
+        self.addSubview(password)
+        password.translatesAutoresizingMaskIntoConstraints = false
+        addTopPaddingPassword = password.topAnchor.constraint(equalTo: lineView2.topAnchor, constant: 30)
+        addTopPaddingPassword.isActive = true
+        password.leadingAnchor.constraint(equalTo: email.leadingAnchor, constant: 0).isActive = true
+        password.trailingAnchor.constraint(equalTo: email.trailingAnchor, constant: 0).isActive = true
+        password.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        
+        self.addSubview(lineView3)
+        lineView3.translatesAutoresizingMaskIntoConstraints = false
+        lineView3.topAnchor.constraint(equalTo: password.bottomAnchor, constant: 0).isActive = true
+        lineView3.leadingAnchor.constraint(equalTo: password.leadingAnchor, constant: 0).isActive = true
+        lineView3.trailingAnchor.constraint(equalTo: password.trailingAnchor, constant: 0).isActive = true
+        lineView3.heightAnchor.constraint(equalTo: password.heightAnchor, constant: -28).isActive = true
+        
+        
+        self.addSubview(confirmPassword)
+        self.sendSubviewToBack(confirmPassword)
+        confirmPassword.translatesAutoresizingMaskIntoConstraints = false
+        addTopPaddingToConfirmPassword = confirmPassword.topAnchor.constraint(equalTo: lineView3.topAnchor, constant: -30)
+        addTopPaddingToConfirmPassword.isActive = true
+        confirmPassword.leadingAnchor.constraint(equalTo: password.leadingAnchor, constant: 0).isActive = true
+        confirmPassword.trailingAnchor.constraint(equalTo: password.trailingAnchor, constant: 0).isActive = true
+        confirmPassword.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        
+        self.addSubview(lineView4)
+        self.sendSubviewToBack(lineView4)
+        lineView4.translatesAutoresizingMaskIntoConstraints = false
+        lineView4.topAnchor.constraint(equalTo: confirmPassword.bottomAnchor, constant: 0).isActive = true
+        lineView4.leadingAnchor.constraint(equalTo: confirmPassword.leadingAnchor, constant: 0).isActive = true
+        lineView4.trailingAnchor.constraint(equalTo: confirmPassword.trailingAnchor, constant: 0).isActive = true
+        lineView4.heightAnchor.constraint(equalTo: confirmPassword.heightAnchor, constant: -28).isActive = true
+        
+        
+        self.addSubview(loginSignUpBtn)
+        loginSignUpBtn.translatesAutoresizingMaskIntoConstraints = false
+        loginSignUpBtn.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
+        loginSignUpBtn.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        loginSignUpBtn.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor, constant: 0).isActive = true
+        loginSignUpBtn.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 20).isActive = true
+        loginSignUpBtn.heightAnchor.constraint(equalToConstant: 58).isActive = true
         
     }
     

@@ -30,4 +30,10 @@ class Button: UIButton {
     }
 }
 
-
+//self.add(subview: forgotPasswordLabel) { (v, p) in [
+//    v.topAnchor.constraint(equalTo: lineView4.bottomAnchor, constant: 10),
+//    v.centerXAnchor.constraint(equalTo: p.centerXAnchor, constant: 78),
+//    v.widthAnchor.constraint(equalToConstant: 150),
+//    v.heightAnchor.constraint(equalToConstant: 19)
+//    ]}
+// let forgotPasswordLabel = Label.customLabel(title: "Forgot your password?", textColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), textSize: 13)

@@ -47,10 +47,21 @@ extension UIView {
         subview.activate(constraints: createConstraints(subview, self))
     }
     
+    func add(subview: UIView, sendViewToBack: Bool, createConstraints: (_ view: UIView, _ parent: UIView) -> [NSLayoutConstraint]) {
+        addSubview(subview)
+        
+        if sendViewToBack == true {
+            sendSubviewToBack(subview)
+        }
+        
+        subview.activate(constraints: createConstraints(subview, self))
+    }
+    
     // NOTE: This funciton activates the given constraints
     func activate(constraints: [NSLayoutConstraint]) {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(constraints)
+        
     }
 }
 

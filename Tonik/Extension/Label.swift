@@ -17,7 +17,7 @@ class Label: UILabel {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = textColor
         label.text = title
-        label.font.withSize(textSize)
+        label.font = UIFont.systemFont(ofSize: textSize)
         
         return label
     }
