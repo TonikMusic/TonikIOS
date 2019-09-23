@@ -17,6 +17,7 @@ class TabBarController: UITabBarController {
         var homeIcon = UIImage(named: "home")
         homeIcon = homeIcon?.scaled(with: CGFloat(0.25))!.withRenderingMode(.alwaysOriginal)
         home.tabBarItem = UITabBarItem(title: "Home", image: homeIcon, tag: 0)
+        home.title = "Tonik"
         
         
         
@@ -26,23 +27,27 @@ class TabBarController: UITabBarController {
         profileIcon = profileIcon?.scaled(with: CGFloat(0.25))!.withRenderingMode(.alwaysOriginal)
         profile.view.backgroundColor = .white
         profile.tabBarItem = UITabBarItem(title: "Profile", image: profileIcon, tag: 1)
+        profile.title = "profile"
         
         let settings = SettingsViewController()
         var settingsIcon = UIImage(named: "settings")
         settingsIcon = settingsIcon?.scaled(with: CGFloat(0.25))!.withRenderingMode(.alwaysOriginal)
         settings.view.backgroundColor = .white
         settings.tabBarItem = UITabBarItem(title: "Settings", image:settingsIcon, tag: 2)
-        
+        settings.title = "Settings"
         // NOTE: set up of the TabBarController and adding the viewControllers
-        viewControllers = [home, profile, settings]
+        let controllers = [home, profile, settings]
+        
+        viewControllers = controllers.map { UINavigationController(rootViewController: $0)}
         self.selectedIndex = 0
         
         setUpMiniPlayer()
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     func setUpMiniPlayer(){
         let miniPlayer = MiniPlayer()
-
+        
         
         view.add(subview: miniPlayer) { (v, p) in [
             v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: (self.tabBar.bounds.size.height) * -1),

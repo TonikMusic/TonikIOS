@@ -40,7 +40,7 @@ class MiniPlayer: UIView {
     private func setUpView() {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.lightGray.cgColor
-        self.backgroundColor = UIColor.init(hexString: "#ededed", alpha: 1)
+        self.backgroundColor = UIColor.init(hexString: "#ededed", alpha: 0.9)
         let MPMusicImageView = UIImageView()
         MPMusicImageView.image = UIImage(named: "music")?.scaled(with: 0.50)
         

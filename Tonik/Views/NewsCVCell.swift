@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class NewsCollectionViewCell: UICollectionViewCell {
-    static let reUSeID = "NewsCell"
+class NewsCVCell: UICollectionViewCell {
+    static let reUseID = "NewsCell"
     
     
     override init(frame: CGRect) {

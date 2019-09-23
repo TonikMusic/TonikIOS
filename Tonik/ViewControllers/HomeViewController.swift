@@ -10,34 +10,42 @@ import UIKit
 import Foundation
 
 class HomeViewController: UIViewController {
-    var collectionView: UICollectionView!
-
+    var homeFeedCV: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUpNewsCollectionView()
-    }
-
-    
-    func setUpNewsCollectionView(){
-        
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - 25), collectionViewLayout: CustomFlowLayout())
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        collectionView.register(NewsCollectionViewCell.self, forCellWithReuseIdentifier: NewsCollectionViewCell.reUSeID)
-        collectionView.register(FeaturedCollectionViewCell.self, forCellWithReuseIdentifier: FeaturedCollectionViewCell.reUSeID)
-        collectionView.backgroundColor = .white
-        view.addSubview(collectionView)
         view.backgroundColor = .white
+    }
+    
+    
+    
+    
+    
+    // Sets up the needed properties for the collectionView
+    func setUpNewsCollectionView(){
+        let flowLayout = UICollectionViewFlowLayout()
+        
+        homeFeedCV = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), collectionViewLayout:flowLayout)
+        homeFeedCV.dataSource = self
+        homeFeedCV.delegate = self
+        homeFeedCV.backgroundColor = .white
+        homeFeedCV.register(NewsCVCell.self, forCellWithReuseIdentifier: NewsCVCell.reUseID)
+        homeFeedCV.register(FeaturedCVCell.self, forCellWithReuseIdentifier: FeaturedCVCell.reUseID)
+        homeFeedCV.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.add(subview: homeFeedCV) { (v, p) in [
+            v.topAnchor.constraint(equalTo: p.safeAreaLayoutGuide.topAnchor, constant: 0),
+            v.leadingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            v.trailingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            v.heightAnchor.constraint(equalToConstant: p.bounds.height - 100)
+            
+            ]}
+        
         
     }
     
-    func insertCells(){
-        
-    }
-
 }
 
 
@@ -53,10 +61,10 @@ extension HomeViewController: UICollectionViewDataSource {
         var cell = UICollectionViewCell()
         switch indexPath.row {
         case 0:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCollectionViewCell.reUSeID, for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCVCell.reUseID, for: indexPath)
             break
         case 1:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedCollectionViewCell.reUSeID, for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedCVCell.reUseID, for: indexPath)
             break
         default:
             cell = UICollectionViewCell()
@@ -66,14 +74,13 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
         
-
+        
     }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
     }
     
 }
@@ -83,7 +90,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height )
+        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height - 200 )
     }
     
     
@@ -102,7 +109,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 50
+        return 0
     }
     
     override func viewWillDisappear(_ animated: Bool) {
