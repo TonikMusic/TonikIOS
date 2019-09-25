@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // NOTE: Setting the root
         
         let loginSignupVC = LoginSignupViewController()
-        window?.rootViewController = loginSignupVC
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         // NOTE: Setting UINavBAr appearance
         UINavigationBar.appearance().barTintColor = .black

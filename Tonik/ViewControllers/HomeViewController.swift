@@ -10,12 +10,18 @@ import UIKit
 import Foundation
 
 class HomeViewController: UIViewController {
+    let isLoggedIn = true
+    
     var homeFeedCollectionView: UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if !isLoggedIn {
+            self.present(LoginSignupViewController(), animated: true, completion: nil)
+        }
+        
         setUpNewsCollectionView()
         view.backgroundColor = .white
     }
