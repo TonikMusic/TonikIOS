@@ -16,7 +16,7 @@ class LoginSignupViewController: UIViewController {
     // NOTE: Instatiating views
     var loginSignupView = LoginSignUpView()
     var logoView = LogoView()
-    let dontHaveAccountlable = Label.customLabel(title: "Don't have an account?", textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), textSize: 16)
+    let dontHaveAccountlable = Label.newLabel(title: "Don't have an account?", textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), textSize: 16)
     let loginSignupBtn = Button.customButton(title: "Sign Up", titleColor: #colorLiteral(red: 0.3921568627, green: 0.01960784314, blue: 0.5607843137, alpha: 1), cornerRadius: 0, backgroundColor: .clear)
     lazy var viewHeight = self.view.frame.height
     lazy var viewWidth = self.view.frame.width

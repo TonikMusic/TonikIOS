@@ -19,31 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // NOTE: Sets a UIWindow to window
         window = UIWindow(frame: UIScreen.main.bounds)
-        // NOTE: TheViewControllers are instanciated with corresponding images
-        
-        let home = HomeViewController()
-        var homeIcon = UIImage(named: "home")
-        homeIcon = homeIcon?.scaled(with: CGFloat(0.25))!.withRenderingMode(.alwaysOriginal)
-        home.view.backgroundColor = .white
-        home.tabBarItem = UITabBarItem(title: "Home", image: homeIcon, tag: 0)
-        
-        home.setUp()
-        
-        let profile = ProfileViewController()
-        var profileIcon = UIImage(named: "profile")
-        profileIcon = profileIcon?.scaled(with: CGFloat(0.25))!.withRenderingMode(.alwaysOriginal)
-        profile.view.backgroundColor = .white
-        profile.tabBarItem = UITabBarItem(title: "Profile", image: profileIcon, tag: 1)
-            
-        let settings = SettingsViewController()
-        var settingsIcon = UIImage(named: "settings")
-        settingsIcon = settingsIcon?.scaled(with: CGFloat(0.25))!.withRenderingMode(.alwaysOriginal)
-        settings.view.backgroundColor = .white
-        settings.tabBarItem = UITabBarItem(title: "Settings", image:settingsIcon, tag: 2)
-        
         // NOTE: set up of the TabBarController and adding the viewControllers
         let tabBarController = TabBarController()
-        tabBarController.viewControllers = [home, profile, settings]
         tabBarController.selectedIndex = 0
         
         // NOTE: Setting the root
@@ -51,7 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let loginSignupVC = LoginSignupViewController()
         window?.rootViewController = loginSignupVC
         window?.makeKeyAndVisible()
-
+        // NOTE: Setting UINavBAr appearance
+        UINavigationBar.appearance().barTintColor = .black
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
         return true
     }
     

@@ -12,8 +12,10 @@ import UIKit
 
 class Label: UILabel {
     
-    public static func customLabel(title: String, textColor: UIColor, textSize: CGFloat) -> UILabel {
-        let label = UILabel()
+    
+    public static func newLabel(title: String, textColor: UIColor, textSize: CGFloat) -> Label {
+        let label = Label()
+
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = textColor
         label.text = title
