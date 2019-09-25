@@ -22,9 +22,9 @@ class LoginSignUpView: UIView {
     let lineView4 = View.dropView(backgroundColor: #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 1))
     let dateOfBirth = TextField.initTextBox(.clear, #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), 0, .clear, "Date of Birth", 16)
     let loginSignUpBtn = Button.customButton(title: "Log In", titleColor: .white, cornerRadius: 30, backgroundColor: #colorLiteral(red: 0.3921568627, green: 0.01960784314, blue: 0.5607843137, alpha: 1))
-    lazy var checkedBox = CustomImage.image(name: "uncheckBox")
-    lazy var artistLabel = Label.newLabel(title: "Are you an artist?", textColor: #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), textSize: 14)
-//    let stackView = StackView.createStackView(with: [self.checkedBox, self.artistLabel])
+    let checkedBox = CustomImage.image(name: "uncheckBox")
+    let artistLabel = Label.newLabel(title: "Are you an artist?", textColor: #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), textSize: 14)
+    
     
     
     
@@ -55,6 +55,7 @@ class LoginSignUpView: UIView {
         self.layer.cornerRadius = 25
         self.dropShadow()
         
+        let stack = Stack()
         
         
         // NOTE: constrainting view
@@ -138,6 +139,7 @@ class LoginSignUpView: UIView {
         dateOfBirth.leadingAnchor.constraint(equalTo: lineView4.leadingAnchor, constant: 0).isActive = true
         dateOfBirth.trailingAnchor.constraint(equalTo: lineView4.trailingAnchor, constant: 0).isActive = true
         dateOfBirth.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
         
         
         
