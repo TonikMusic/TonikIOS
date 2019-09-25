@@ -24,6 +24,8 @@ class LoginSignupViewController: UIViewController {
     var addYAxisToLoginSignupView: NSLayoutConstraint!
     var addHeightPaddingToLoginSignupView: NSLayoutConstraint!
     var addYAxisToLogoView: NSLayoutConstraint!
+    let datePickerView: UIDatePicker = UIDatePicker()
+    
     
     
     override func viewDidLoad() {
@@ -32,16 +34,11 @@ class LoginSignupViewController: UIViewController {
         view.backgroundColor = .white
         setUpLogin()
         loginSignupBtn.addTarget(self, action: #selector(didPressAccountBtn), for: .touchUpInside)
+        showDatePicker()
 //        updateViewToUseKeyBorad()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        print("signup button frame = \(loginSignupView.email.frame)")
-        print(self.view.frame.midY)
-        print(self.view.frame.height)
-        print(self.view.frame.height / 2 + 30)
-    }
+  
     
     // NOTE: This function sets the login and sign up view components
     func setUpLogin() {
@@ -87,7 +84,36 @@ class LoginSignupViewController: UIViewController {
 
     }
     
+    @objc func datePickerValueChanged() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        self.loginSignupView.dateOfBirth.text = formatter.string(from: datePickerView.date)
+        
+    }
     
+    @objc func doneDatePickerPressed() {
+        self.view.endEditing(true)
+    }
+
+    // NOTE: This funciton sets up the date picker along with a tool bar
+    func showDatePicker() {
+        
+        datePickerView.datePickerMode = .date
+        datePickerView.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneDatePickerPressed))
+        
+        toolBar.setItems([space, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        toolBar.sizeToFit()
+        
+        self.loginSignupView.dateOfBirth.inputAccessoryView = toolBar
+        self.loginSignupView.dateOfBirth.inputView = datePickerView
+    }
     
     //NOTE: Updates super view visibility when keyboard is called
     func updateViewToUseKeyBorad() {
@@ -111,6 +137,7 @@ class LoginSignupViewController: UIViewController {
             self.loginSignupView.addTopPaddingToEmail.constant = 20
             self.loginSignupView.addTopPaddingPassword.constant = 20
             self.loginSignupView.addTopPaddingToConfirmPassword.constant = 20
+            self.loginSignupView.addTopPaddingToDOB.constant = 20
             
             
 
@@ -122,6 +149,7 @@ class LoginSignupViewController: UIViewController {
                 self.loginSignupView.lineView1.alpha = 1
                 self.loginSignupView.confirmPassword.alpha = 1
                 self.loginSignupView.lineView4.alpha = 1
+                self.loginSignupView.dateOfBirth.alpha = 1
                 
             })
             
@@ -144,6 +172,7 @@ class LoginSignupViewController: UIViewController {
             self.loginSignupView.addTopPaddingToEmail.constant = -40
             self.loginSignupView.addTopPaddingPassword.constant = 40
             self.loginSignupView.addTopPaddingToConfirmPassword.constant = -40
+            self.loginSignupView.addTopPaddingToDOB.constant = -40
             
             UIView.animate(withDuration: 0.8, delay: 0.0, options: .curveEaseInOut, animations: {
                 
@@ -153,6 +182,7 @@ class LoginSignupViewController: UIViewController {
                 self.loginSignupView.lineView1.alpha = 0
                 self.loginSignupView.confirmPassword.alpha = 0
                 self.loginSignupView.lineView4.alpha = 0
+                self.loginSignupView.dateOfBirth.alpha = 0
                 
             })
             

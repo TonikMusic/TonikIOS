@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class CustomImage: UIImageView {
+    
     public static func image(name: String) -> UIImageView {
         let image = UIImage(named: name)
         let imageView = UIImageView(image: image)

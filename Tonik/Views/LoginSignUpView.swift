@@ -20,19 +20,28 @@ class LoginSignUpView: UIView {
     let lineView3 = View.dropView(backgroundColor: #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 1))
     let confirmPassword = TextField.initTextBox(.white, #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), 0, .clear, "Confirm Password", 16)
     let lineView4 = View.dropView(backgroundColor: #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 1))
+    let dateOfBirth = TextField.initTextBox(.clear, #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), 0, .clear, "Date of Birth", 16)
     let loginSignUpBtn = Button.customButton(title: "Log In", titleColor: .white, cornerRadius: 30, backgroundColor: #colorLiteral(red: 0.3921568627, green: 0.01960784314, blue: 0.5607843137, alpha: 1))
+    lazy var checkedBox = CustomImage.image(name: "uncheckBox")
+    lazy var artistLabel = Label.customLabel(title: "Are you an artist?", textColor: #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), textSize: 14)
+    let stackView = StackView.createStackView(with: [self.checkedBox, self.artistLabel])
+    
+    
     
     // NOTE: Setting constraint variables
     var addTopPaddingToEmail: NSLayoutConstraint!
     var addTopPaddingPassword: NSLayoutConstraint!
     var addTopPaddingToConfirmPassword: NSLayoutConstraint!
     var addTopPaddingTologinSignUpBtn: NSLayoutConstraint!
+    var addTopPaddingToDOB: NSLayoutConstraint!
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpView()
         secureTextField()
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -118,6 +127,19 @@ class LoginSignUpView: UIView {
         lineView4.leadingAnchor.constraint(equalTo: confirmPassword.leadingAnchor, constant: 0).isActive = true
         lineView4.trailingAnchor.constraint(equalTo: confirmPassword.trailingAnchor, constant: 0).isActive = true
         lineView4.heightAnchor.constraint(equalTo: lineView3.heightAnchor, constant: 0).isActive = true
+        
+        
+        
+        self.addSubview(dateOfBirth)
+        self.sendSubviewToBack(dateOfBirth)
+        self.translatesAutoresizingMaskIntoConstraints = false
+        addTopPaddingToDOB = dateOfBirth.topAnchor.constraint(equalTo: lineView4.topAnchor, constant: -40)
+        addTopPaddingToDOB.isActive = true
+        dateOfBirth.leadingAnchor.constraint(equalTo: lineView4.leadingAnchor, constant: 0).isActive = true
+        dateOfBirth.trailingAnchor.constraint(equalTo: lineView4.trailingAnchor, constant: 0).isActive = true
+        dateOfBirth.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        
         
         
         self.addSubview(loginSignUpBtn)
