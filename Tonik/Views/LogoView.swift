@@ -32,10 +32,6 @@ class LogoView: UIView {
     // NOTE: this function constraints the view components
     private func setUpView() {
         
-        let h = self.frame.height
-        let w = self.frame.width
-        
-        
         // NOTE: constrainting view components
         self.add(subview: imageView) { (v, p) in [
             v.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 100),
