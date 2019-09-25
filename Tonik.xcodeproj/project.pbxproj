@@ -28,6 +28,7 @@
 		2BE60B202318414800262EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BE60B1F2318414800262EE1 /* Assets.xcassets */; };
 		2BE60B232318414800262EE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BE60B212318414800262EE1 /* LaunchScreen.storyboard */; };
 		2BE60B2E2318414800262EE1 /* TonikTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B2D2318414800262EE1 /* TonikTests.swift */; };
+		2BF72B7A233BFCBA00E46A75 /* NewsCardCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF72B79233BFCBA00E46A75 /* NewsCardCVCell.swift */; };
 		74D0658F2328F085006AA127 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D0658E2328F085006AA127 /* Label.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		2BE60B292318414800262EE1 /* TonikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TonikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BE60B2D2318414800262EE1 /* TonikTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TonikTests.swift; sourceTree = "<group>"; };
 		2BE60B2F2318414800262EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BF72B79233BFCBA00E46A75 /* NewsCardCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCardCVCell.swift; sourceTree = "<group>"; };
 		74D0658E2328F085006AA127 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 				2B28129E2326CF9A00B1FBD4 /* SignUpView.swift */,
 				2B2812A82329B6CF00B1FBD4 /* MiniPlayerView.swift */,
 				2B2812AE2330350100B1FBD4 /* NewsCVCell.swift */,
+				2BF72B79233BFCBA00E46A75 /* NewsCardCVCell.swift */,
 				2B2812B22335745900B1FBD4 /* FeaturedCVCell.swift */,
 				2B2812B42339582A00B1FBD4 /* ArtistCVCell.swift */,
 			);
@@ -279,6 +282,7 @@
 				2B2812A72329B40900B1FBD4 /* TabBarController.swift in Sources */,
 				2BE60B1B2318414600262EE1 /* HomeViewController.swift in Sources */,
 				2B2812B52339582A00B1FBD4 /* ArtistCVCell.swift in Sources */,
+				2BF72B7A233BFCBA00E46A75 /* NewsCardCVCell.swift in Sources */,
 				2B2812992326CE9000B1FBD4 /* UIViewControllerExt.swift in Sources */,
 				2B2812A52328335900B1FBD4 /* SettingsViewController.swift in Sources */,
 				2B2812A92329B6CF00B1FBD4 /* MiniPlayerView.swift in Sources */,

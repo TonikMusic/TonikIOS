@@ -66,3 +66,72 @@ class ArtistCVCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+
+
+// NOTE: Extensions for colelctionView
+extension ArtistCVCell: UICollectionViewDataSource {
+    
+    // NOTE: numbers of cells to return
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    // NOTE: what kind of cell to return
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = UICollectionViewCell()
+        
+        cell.layer.cornerRadius = 15
+        return cell
+    }
+    
+    // NOTE: was the cell tappped
+    
+    func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+        
+        
+    }
+}
+
+// NOTE: collectionView delegate extension
+extension ArtistCVCell: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+}
+// NOTE: CollectionViewDelegateFlowLayout extension
+extension ArtistCVCell: UICollectionViewDelegateFlowLayout {
+    
+    
+    // NOTE: size of the cell
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: genreCollectionView.bounds.width - 100, height: genreCollectionView.bounds.height - 125 )
+    }
+    
+    // NOTE: padding
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 75, left: 25, bottom: 25, right: 25)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 35
+    }
+    
+
+}
