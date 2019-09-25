@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 extension UIView {
     
     // NOTE: This function gives any view a shadow affect
@@ -63,5 +64,19 @@ extension UIView {
         NSLayoutConstraint.activate(constraints)
         
     }
+    
+    
+    
 }
 
+
+extension UIView {
+    
+    func createView() -> UIView {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }
+    
+}

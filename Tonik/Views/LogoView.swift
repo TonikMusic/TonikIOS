@@ -2,7 +2,7 @@
 //  LogoView.swift
 //  Tonik
 //
-//  Created by Student Loaner 3 on 9/14/19.
+//  Created by Maximo Hinojosa 3 on 9/14/19.
 //  Copyright © 2019 HazeWritesCode. All rights reserved.
 //
 
