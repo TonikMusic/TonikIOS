@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class StackView: UIStackView {
+class Stack: UIStackView {
     
     public static func createStackView(with views: [UIView]) -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: views)
