@@ -24,7 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.selectedIndex = 0
         
         // NOTE: Setting the root
-        window?.rootViewController = tabBarController
+        
+        let loginSignupVC = LoginSignupViewController()
+        window?.rootViewController = loginSignupVC
         window?.makeKeyAndVisible()
         // NOTE: Setting UINavBAr appearance
         UINavigationBar.appearance().barTintColor = .black
@@ -57,19 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
 
-extension UIImage {
-    
-    func scaled(with scale: CGFloat) -> UIImage? {
-        // size has to be integer, otherwise it could get white lines
-        let size = CGSize(width: floor(self.size.width * scale), height: floor(self.size.height * scale))
-        UIGraphicsBeginImageContext(size)
-        draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
-    }
-}
+
 
