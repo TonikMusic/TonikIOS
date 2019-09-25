@@ -26,11 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // NOTE: Setting the root
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
-        
+        // NOTE: Setting UINavBAr appearance
         UINavigationBar.appearance().barTintColor = .black
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        
         UINavigationBar.appearance().isTranslucent = false
         return true
     }

@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 class HomeViewController: UIViewController {
-    var homeFeedCV: UICollectionView!
+    var homeFeedCollectionView: UICollectionView!
     
     
     override func viewDidLoad() {
@@ -26,20 +26,22 @@ class HomeViewController: UIViewController {
     
     // Sets up the needed properties for the collectionView
     func setUpNewsCollectionView(){
+        // NOTE: set the flowLayput for the colelction view to use
         let flowLayout = UICollectionViewFlowLayout()
-        
-        homeFeedCV = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), collectionViewLayout:flowLayout)
-        homeFeedCV.dataSource = self
-        homeFeedCV.delegate = self
-        homeFeedCV.backgroundColor = .white
-        homeFeedCV.register(NewsCVCell.self, forCellWithReuseIdentifier: NewsCVCell.reUseID)
-        homeFeedCV.register(FeaturedCVCell.self, forCellWithReuseIdentifier: FeaturedCVCell.reUseID)
-        homeFeedCV.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.add(subview: homeFeedCV) { (v, p) in [
+        // NOTE: baisc setup for collectionCiew
+        homeFeedCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), collectionViewLayout:flowLayout)
+        homeFeedCollectionView.dataSource = self
+        homeFeedCollectionView.delegate = self
+        homeFeedCollectionView.backgroundColor = .white
+        homeFeedCollectionView.register(NewsCVCell.self, forCellWithReuseIdentifier: NewsCVCell.reUseID)
+        homeFeedCollectionView.register(FeaturedCVCell.self, forCellWithReuseIdentifier: FeaturedCVCell.reUseID)
+        homeFeedCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        // NOTE: add to parent with constraints
+        view.add(subview: homeFeedCollectionView) { (v, p) in [
             v.topAnchor.constraint(equalTo: p.safeAreaLayoutGuide.topAnchor, constant: 0),
             v.leadingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.leadingAnchor, constant: 0),
             v.trailingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.trailingAnchor, constant: 0),
-            v.heightAnchor.constraint(equalToConstant: p.bounds.height - 100)
+            v.heightAnchor.constraint(equalToConstant: p.bounds.height - 70)
             
             ]}
         
@@ -50,7 +52,7 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController: UICollectionViewDataSource {
-    
+    // NOTE: number of cells to return
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         return 2
@@ -59,6 +61,8 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
+        
+        // NOTE: switch statment to return different cells at different indexs
         switch indexPath.row {
         case 0:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCVCell.reUseID, for: indexPath)
@@ -90,14 +94,14 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height - 200 )
+        return CGSize(width: homeFeedCollectionView.bounds.width, height: homeFeedCollectionView.bounds.height - 175 )
     }
     
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 25, left: 10, bottom: 25, right: 10)
+        return UIEdgeInsets(top: 0, left: 10, bottom: 25, right: 10)
     }
     
     func collectionView(_ collectionView: UICollectionView,

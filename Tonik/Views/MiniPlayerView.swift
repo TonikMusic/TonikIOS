@@ -11,20 +11,26 @@ import UIKit
 
 
 class MiniPlayer: UIView {
-    
+
     var isMusicPlaying = false
     
+    // NOTE: override init
     override init(frame: CGRect) {
         super.init(frame: frame)
+        // NOTE: calls SetUpView whihc sets up the views within the miniplayer
         setUpView()
     }
+    
+    // NOTE: required
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    // NOTE: play button press check
     @objc func playButtonTapped(button: UIButton){
+        
+        // NOTE: checks the tag of the button to deside what state it should be in
         if (button.tag == 0) {
             button.setImage(UIImage(named: "pause")?.scaled(with: 0.35), for: .normal)
             button.tag = 1
@@ -41,6 +47,7 @@ class MiniPlayer: UIView {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.lightGray.cgColor
         self.backgroundColor = UIColor.init(hexString: "#ededed", alpha: 0.9)
+        
         let MPMusicImageView = UIImageView()
         MPMusicImageView.image = UIImage(named: "music")?.scaled(with: 0.50)
         
@@ -60,22 +67,22 @@ class MiniPlayer: UIView {
         MPMusicPlayingLabel.text = "No Music Playing"
         
         
-        
+        // NOTE: add to view with constraints
         self.add(subview: MPMusicImageView) { (v, p) in [
             v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -15),
             v.leadingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.leadingAnchor, constant: 8)
             ]}
-        
+        // NOTE: add to view with constraints
         self.add(subview: MPMusicPlayingLabel) { (v, p) in [
             v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -25),
             v.leadingAnchor.constraint(equalTo: MPMusicImageView.safeAreaLayoutGuide.trailingAnchor, constant: 8)
             ]}
-        
+        // NOTE: add to view with constraints
         self.add(subview: MPBackButton) { (v, p) in [
             v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             v.leadingAnchor.constraint(equalTo: MPMusicPlayingLabel.safeAreaLayoutGuide.trailingAnchor, constant: 90)
             ]}
-        
+        // NOTE: add to view with constraints
         self.add(subview: MPPlayButton) { (v, p) in [
             v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             v.leadingAnchor.constraint(equalTo: MPBackButton.safeAreaLayoutGuide.trailingAnchor, constant: 8)
