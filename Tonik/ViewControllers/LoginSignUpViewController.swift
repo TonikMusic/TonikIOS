@@ -137,7 +137,7 @@ class LoginSignupViewController: UIViewController {
             self.loginSignupView.addTopPaddingToEmail.constant = 20
             self.loginSignupView.addTopPaddingPassword.constant = 20
             self.loginSignupView.addTopPaddingToConfirmPassword.constant = 20
-            self.loginSignupView.addTopPaddingToDOB.constant = 20
+            self.loginSignupView.addTopPaddingToView.constant = 20
             
             
 
@@ -149,6 +149,8 @@ class LoginSignupViewController: UIViewController {
                 self.loginSignupView.lineView1.alpha = 1
                 self.loginSignupView.confirmPassword.alpha = 1
                 self.loginSignupView.lineView4.alpha = 1
+                self.loginSignupView.toggleSwitch.alpha = 1
+                self.loginSignupView.artistLabel.alpha = 1
                 self.loginSignupView.dateOfBirth.alpha = 1
                 
             })
@@ -172,7 +174,7 @@ class LoginSignupViewController: UIViewController {
             self.loginSignupView.addTopPaddingToEmail.constant = -40
             self.loginSignupView.addTopPaddingPassword.constant = 40
             self.loginSignupView.addTopPaddingToConfirmPassword.constant = -40
-            self.loginSignupView.addTopPaddingToDOB.constant = -40
+            self.loginSignupView.addTopPaddingToView.constant = -40
             
             UIView.animate(withDuration: 0.8, delay: 0.0, options: .curveEaseInOut, animations: {
                 
@@ -182,6 +184,8 @@ class LoginSignupViewController: UIViewController {
                 self.loginSignupView.lineView1.alpha = 0
                 self.loginSignupView.confirmPassword.alpha = 0
                 self.loginSignupView.lineView4.alpha = 0
+                self.loginSignupView.toggleSwitch.alpha = 0
+                self.loginSignupView.artistLabel.alpha = 0
                 self.loginSignupView.dateOfBirth.alpha = 0
                 
             })
