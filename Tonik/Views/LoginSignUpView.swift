@@ -22,9 +22,9 @@ class LoginSignUpView: UIView {
     let lineView4 = View.dropView(backgroundColor: #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 1))
     let dateOfBirth = TextField.initTextBox(.clear, #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), 0, .clear, "Date of Birth", 16)
     let loginSignUpBtn = Button.customButton(title: "Log In", titleColor: .white, cornerRadius: 30, backgroundColor: #colorLiteral(red: 0.3921568627, green: 0.01960784314, blue: 0.5607843137, alpha: 1))
-    let checkedBox = CustomImage.image(name: "uncheckBox")
+    let toggleSwitch = UISwitch()
     let artistLabel = Label.newLabel(title: "Are you an artist?", textColor: #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), textSize: 14)
-    
+    let view = View.dropView(backgroundColor: .clear)
     
     
     
@@ -33,7 +33,7 @@ class LoginSignUpView: UIView {
     var addTopPaddingPassword: NSLayoutConstraint!
     var addTopPaddingToConfirmPassword: NSLayoutConstraint!
     var addTopPaddingTologinSignUpBtn: NSLayoutConstraint!
-    var addTopPaddingToDOB: NSLayoutConstraint!
+    var addTopPaddingToView: NSLayoutConstraint!
     
     
     override init(frame: CGRect) {
@@ -55,7 +55,7 @@ class LoginSignUpView: UIView {
         self.layer.cornerRadius = 25
         self.dropShadow()
         
-        let stack = Stack()
+        
         
         
         // NOTE: constrainting view
@@ -131,14 +131,37 @@ class LoginSignUpView: UIView {
         
         
         
-        self.addSubview(dateOfBirth)
-        self.sendSubviewToBack(dateOfBirth)
-        self.translatesAutoresizingMaskIntoConstraints = false
-        addTopPaddingToDOB = dateOfBirth.topAnchor.constraint(equalTo: lineView4.topAnchor, constant: -40)
-        addTopPaddingToDOB.isActive = true
-        dateOfBirth.leadingAnchor.constraint(equalTo: lineView4.leadingAnchor, constant: 0).isActive = true
-        dateOfBirth.trailingAnchor.constraint(equalTo: lineView4.trailingAnchor, constant: 0).isActive = true
-        dateOfBirth.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        self.addSubview(view)
+        self.sendSubviewToBack(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addTopPaddingToView = view.topAnchor.constraint(equalTo: lineView4.topAnchor, constant: -40)
+        addTopPaddingToView.isActive = true
+        view.leadingAnchor.constraint(equalTo: lineView4.leadingAnchor, constant: 0).isActive = true
+        view.trailingAnchor.constraint(equalTo: lineView4.trailingAnchor, constant: 0).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        
+        view.addSubview(toggleSwitch)
+        view.sendSubviewToBack(toggleSwitch)
+        toggleSwitch.translatesAutoresizingMaskIntoConstraints = false
+        toggleSwitch.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        toggleSwitch.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        toggleSwitch.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        
+        
+        view.addSubview(artistLabel)
+        view.sendSubviewToBack(artistLabel)
+        artistLabel.translatesAutoresizingMaskIntoConstraints = false
+        artistLabel.leadingAnchor.constraint(equalTo: toggleSwitch.trailingAnchor, constant: 10).isActive = true
+        artistLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15).isActive = true
+        artistLabel.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        
+        view.addSubview(dateOfBirth)
+        view.sendSubviewToBack(dateOfBirth)
+        dateOfBirth.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        dateOfBirth.leadingAnchor.constraint(equalTo: artistLabel.trailingAnchor, constant: 50).isActive = true
+        dateOfBirth.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        dateOfBirth.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
         
         
         
