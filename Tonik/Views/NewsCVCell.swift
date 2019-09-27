@@ -34,7 +34,7 @@ class NewsCVCell: UICollectionViewCell {
         newsCollectionView.dataSource = self
         newsCollectionView.delegate = self
         newsCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        newsCollectionView.backgroundColor = .black
+        newsCollectionView.backgroundColor = .white
         newsCollectionView.register(NewsCardCVCell.self, forCellWithReuseIdentifier: NewsCardCVCell.reUseId)
         // NOTE: add to parent view with constraints
         self.add(subview: newsCollectionView) { (v, p) in [
@@ -61,7 +61,6 @@ extension NewsCVCell: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = newsCollectionView.dequeueReusableCell(withReuseIdentifier: NewsCardCVCell.reUseId, for: indexPath) as! NewsCardCVCell
         
-        cell.layer.cornerRadius = 15
         return cell
     }
     
@@ -71,6 +70,7 @@ extension NewsCVCell: UICollectionViewDataSource {
         
         
     }
+    
 }
 
 // NOTE: collectionView delegate extension
@@ -83,19 +83,18 @@ extension NewsCVCell: UICollectionViewDelegate {
 // NOTE: CollectionViewDelegateFlowLayout extension
 extension NewsCVCell: UICollectionViewDelegateFlowLayout {
     
-    
     // NOTE: size of the cell
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: newsCollectionView.bounds.width - 100, height: newsCollectionView.bounds.height - 125 )
+        return CGSize(width: newsCollectionView.bounds.width, height: newsCollectionView.bounds.height - 100)
     }
     
     // NOTE: padding
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 50, bottom: 25, right: 50)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 25, right: 0)
     }
     
     
@@ -108,7 +107,7 @@ extension NewsCVCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 35
+        return 20
     }
     
 
