@@ -12,8 +12,7 @@ import Foundation
 class HomeViewController: UIViewController {
     let isLoggedIn = true
     
-    var homeFeedCollectionView: UICollectionView!
-    
+    var homeFeedCollectionView: UICollectionView! 
     
     override func viewDidLoad() {
         super.viewDidLoad()
