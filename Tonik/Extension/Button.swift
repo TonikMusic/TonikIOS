@@ -24,8 +24,6 @@ class Button: UIButton {
         button.backgroundColor = backgroundColor
         button.setTitleColor(titleColor, for: .normal)
         button.layer.cornerRadius = cornerRadius
-        
-        
         return button
     }
 }
