@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 class HomeViewController: UIViewController {
-    let isLoggedIn = true
+    let isLoggedIn = false
     
     var homeFeedCollectionView: UICollectionView! 
     

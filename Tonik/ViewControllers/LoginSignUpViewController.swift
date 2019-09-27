@@ -34,8 +34,9 @@ class LoginSignupViewController: UIViewController {
         view.backgroundColor = .white
         setUpLogin()
         loginSignupBtn.addTarget(self, action: #selector(didPressAccountBtn), for: .touchUpInside)
+        loginSignupView.loginSignUpBtn.addTarget(self, action: #selector(didPressLoginSignupBtn), for: .touchUpInside)
         showDatePicker()
-//        updateViewToUseKeyBorad()
+        //updateViewToUseKeyBorad()
     }
     
   
@@ -78,6 +79,16 @@ class LoginSignupViewController: UIViewController {
         
     }
     
+    @objc func didPressLoginSignupBtn() {
+        if self.loginSignupView.loginSignUpBtn.currentTitle == "Sign Up" {
+//            self.dismiss(animated: true, completion: nil)
+            let layout = UICollectionViewFlowLayout()
+            let onBoardingVC = OnBoardingViewController(collectionViewLayout: layout)
+        } else {
+            // NOTE: Process the user to login
+        }
+    }
+
     @objc func didPressAccountBtn() {
         
         addAnimationToViews()
