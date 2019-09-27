@@ -26,7 +26,7 @@ class NewsHeaderView: UICollectionReusableView {
         
         self.add(subview: header) { (v, p) in [
             v.topAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: 5),
-            v.leadingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            v.leadingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.leadingAnchor, constant: 8),
             v.trailingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.trailingAnchor, constant: 0),
             v.heightAnchor.constraint(equalToConstant: 15),
             ]}
