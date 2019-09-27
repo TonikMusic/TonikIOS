@@ -17,7 +17,8 @@ class LoginSignupViewController: UIViewController {
     var loginSignupView = LoginSignUpView()
     var logoView = LogoView()
     let dontHaveAccountlable = Label.newLabel(title: "Don't have an account?", textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), textSize: 16)
-    let loginSignupBtn = Button.customButton(title: "Sign Up", titleColor: #colorLiteral(red: 0.3921568627, green: 0.01960784314, blue: 0.5607843137, alpha: 1), cornerRadius: 0, backgroundColor: .clear)
+    let createAccountBtn = Button.customButton(title: "Sign Up", titleColor: #colorLiteral(red: 0.3921568627, green: 0.01960784314, blue: 0.5607843137, alpha: 1), cornerRadius: 0, backgroundColor: .clear)
+    let loginSignUpBtn = Button.customButton(title: "Log In", titleColor: .white, cornerRadius: 30, backgroundColor: #colorLiteral(red: 0.3921568627, green: 0.01960784314, blue: 0.5607843137, alpha: 1))
     lazy var viewHeight = self.view.frame.height
     lazy var viewWidth = self.view.frame.width
     lazy var viewCenterY = self.view.frame.midY
@@ -33,8 +34,8 @@ class LoginSignupViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
         setUpLogin()
-        loginSignupBtn.addTarget(self, action: #selector(didPressAccountBtn), for: .touchUpInside)
-        loginSignupView.loginSignUpBtn.addTarget(self, action: #selector(didPressLoginSignupBtn), for: .touchUpInside)
+        createAccountBtn.addTarget(self, action: #selector(didPressAccountBtn), for: .touchUpInside)
+        loginSignUpBtn.addTarget(self, action: #selector(didPressLoginSignupBtn), for: .touchUpInside)
         showDatePicker()
         //updateViewToUseKeyBorad()
     }
@@ -63,27 +64,36 @@ class LoginSignupViewController: UIViewController {
         logoView.heightAnchor.constraint(equalToConstant: 100).isActive = true
 
         
-        view.add(subview: dontHaveAccountlable) { (v, p) in [
-            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -10),
-            v.leadingAnchor.constraint(equalTo: loginSignupView.leadingAnchor, constant: viewWidth/45),
-            v.heightAnchor.constraint(equalToConstant: 20)
-            ]}
-
-        view.add(subview: loginSignupBtn) { (v, p) in [
-            v.centerYAnchor.constraint(equalTo: dontHaveAccountlable.centerYAnchor, constant: 0),
-            v.trailingAnchor.constraint(equalTo: loginSignupView.trailingAnchor, constant: -15),
-            v.widthAnchor.constraint(equalToConstant: 60),
-            v.heightAnchor.constraint(equalToConstant: 20)
-            ]}
+        view.addSubview(loginSignUpBtn)
+        loginSignUpBtn.dropShadow()
+        loginSignUpBtn.translatesAutoresizingMaskIntoConstraints = false
+        loginSignUpBtn.leadingAnchor.constraint(equalTo: loginSignupView.leadingAnchor, constant: 20).isActive = true
+        loginSignUpBtn.trailingAnchor.constraint(equalTo: loginSignupView.trailingAnchor, constant: -20).isActive = true
+        loginSignUpBtn.centerXAnchor.constraint(equalTo: loginSignupView.centerXAnchor, constant: 0).isActive = true
+        loginSignUpBtn.centerYAnchor.constraint(equalTo: loginSignupView.bottomAnchor, constant: 0).isActive = true
+        loginSignUpBtn.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
+        view.addSubview(dontHaveAccountlable)
+        dontHaveAccountlable.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
+        dontHaveAccountlable.leadingAnchor.constraint(equalTo: loginSignupView.leadingAnchor, constant: viewWidth/45).isActive = true
+        dontHaveAccountlable.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
+        view.addSubview(createAccountBtn)
+        createAccountBtn.centerYAnchor.constraint(equalTo: dontHaveAccountlable.centerYAnchor, constant: 0).isActive = true
+        createAccountBtn.trailingAnchor.constraint(equalTo: loginSignupView.trailingAnchor, constant: -15).isActive = true
+        createAccountBtn.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        createAccountBtn.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        createAccountBtn.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
     
     @objc func didPressLoginSignupBtn() {
-        if self.loginSignupView.loginSignUpBtn.currentTitle == "Sign Up" {
+        if self.loginSignUpBtn.currentTitle == "Sign Up" {
 //            self.dismiss(animated: true, completion: nil)
+            print("pressed")
             let layout = UICollectionViewFlowLayout()
             let onBoardingVC = OnBoardingViewController(collectionViewLayout: layout)
+//            self.navigationController?.pushViewController(onBoardingVC, animated: true)
+            
         } else {
             // NOTE: Process the user to login
         }
@@ -138,7 +148,7 @@ class LoginSignupViewController: UIViewController {
     // NOTE: This function animates the given views
     func addAnimationToViews() {
         
-        if loginSignupBtn.currentTitle == "Sign Up" {
+        if  createAccountBtn.currentTitle == "Sign Up" {
             
             self.loginSignupView.userName.isEnabled = true
             self.loginSignupView.confirmPassword.isEnabled = true
@@ -170,8 +180,8 @@ class LoginSignupViewController: UIViewController {
             UIView.animate(withDuration: 0.9) {
                 self.dontHaveAccountlable.alpha = 1
                 self.dontHaveAccountlable.text = "Already have an account?"
-                self.loginSignupView.loginSignUpBtn.setTitle("Sign Up", for: .normal)
-                self.loginSignupBtn.setTitle("Log In", for: .normal)
+                self.loginSignUpBtn.setTitle("Sign Up", for: .normal)
+                self.createAccountBtn.setTitle("Log In", for: .normal)
                 
             }
 
@@ -205,8 +215,8 @@ class LoginSignupViewController: UIViewController {
             UIView.animate(withDuration: 0.9, animations: {
                 self.dontHaveAccountlable.alpha = 1
                 self.dontHaveAccountlable.text = "Don't have an account?"
-                self.loginSignupView.loginSignUpBtn.setTitle("Log In", for: .normal)
-                self.loginSignupBtn.setTitle("Sign Up", for: .normal)
+                self.loginSignUpBtn.setTitle("Log In", for: .normal)
+                self.createAccountBtn.setTitle("Sign Up", for: .normal)
                 
             })
 

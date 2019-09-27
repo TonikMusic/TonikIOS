@@ -21,7 +21,7 @@ class LoginSignUpView: UIView {
     let confirmPassword = TextField.initTextBox(.white, #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), 0, .clear, "Confirm Password", 16)
     let lineView4 = View.dropView(backgroundColor: #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 1))
     let dateOfBirth = TextField.initTextBox(.clear, #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), 0, .clear, "Date of Birth", 16)
-    let loginSignUpBtn = Button.customButton(title: "Log In", titleColor: .white, cornerRadius: 30, backgroundColor: #colorLiteral(red: 0.3921568627, green: 0.01960784314, blue: 0.5607843137, alpha: 1))
+    
     let toggleSwitch = UISwitch()
     let artistLabel = Label.newLabel(title: "Are you an artist?", textColor: #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), textSize: 14)
     let view = View.dropView(backgroundColor: .clear)
@@ -167,13 +167,7 @@ class LoginSignUpView: UIView {
         
         
         
-        self.addSubview(loginSignUpBtn)
-        loginSignUpBtn.translatesAutoresizingMaskIntoConstraints = false
-        loginSignUpBtn.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        loginSignUpBtn.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-        loginSignUpBtn.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor, constant: 0).isActive = true
-        loginSignUpBtn.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
-        loginSignUpBtn.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        
         
     }
     
