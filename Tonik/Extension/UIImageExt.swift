@@ -2,7 +2,7 @@
 //  UIImageExt.swift
 //  Tonik
 //
-//  Created by Student Loaner 3 on 9/13/19.
+//  Created by Maximo Hinojosa on 9/13/19.
 //  Copyright © 2019 HazeWritesCode. All rights reserved.
 //
 

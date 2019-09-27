@@ -31,7 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if userDefault.bool(forKey: "isUserLoggedIn") {
             window?.rootViewController = tabBarController
         } else {
-            window?.rootViewController = loginSignupVC
+            let nav = UINavigationController(rootViewController: loginSignupVC)
+            nav.navigationBar.isHidden = true
+            window?.rootViewController = nav
         }
         
         // NOTE: Setting the root
