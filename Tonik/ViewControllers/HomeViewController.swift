@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         if !isLoggedIn {
-            self.present(LoginSignupViewController(), animated: true, completion: nil)
+            self.navigationController?.pushViewController(LoginSignupViewController(), animated: true)
         }
         
         setUpNewsCollectionView()
@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
         homeFeedCollectionView.backgroundColor = .white
         homeFeedCollectionView.register(NewsCVCell.self, forCellWithReuseIdentifier: NewsCVCell.reUseID)
         homeFeedCollectionView.register(FeaturedCVCell.self, forCellWithReuseIdentifier: FeaturedCVCell.reUseID)
+        homeFeedCollectionView.register(NewsHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: NewsHeaderView.reUseId)
         homeFeedCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         // NOTE: add to parent with constraints
         view.add(subview: homeFeedCollectionView) { (v, p) in [
@@ -58,10 +59,40 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NewsHeaderView.reUseId, for: indexPath) as! NewsHeaderView
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            switch indexPath.section {
+            case 0:
+                headerView.header.text = "What's New?"
+                break
+            case 1:
+                headerView.header.text = "Featured artists"
+                break
+            case 2:
+                headerView.header.text = "Featured Tracks"
+                break
+            default:
+                print("")
+            }
+            return headerView
+
+        default:
+            assert(false, "Unexpected element kind")
+        }
+
+        return headerView
+    }
     // NOTE: number of cells to return
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -69,11 +100,14 @@ extension HomeViewController: UICollectionViewDataSource {
         var cell = UICollectionViewCell()
         
         // NOTE: switch statment to return different cells at different indexs
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCVCell.reUseID, for: indexPath)
             break
         case 1:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedCVCell.reUseID, for: indexPath)
+            break
+        case 2:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedCVCell.reUseID, for: indexPath)
             break
         default:
@@ -97,24 +131,29 @@ extension HomeViewController: UICollectionViewDelegate {
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+            return CGSize(width: collectionView.frame.width, height: 15 )
+    }
+    
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: homeFeedCollectionView.bounds.width, height: homeFeedCollectionView.bounds.height - 175 )
+        return CGSize(width: homeFeedCollectionView.bounds.width, height: homeFeedCollectionView.bounds.height - 125 )
     }
     
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 10, bottom: 25, right: 10)
+        return UIEdgeInsets.zero
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: 0, height: 0)
     }
+    
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -122,8 +161,5 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         return 0
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
 }
 

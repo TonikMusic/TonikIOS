@@ -12,6 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let userDefault = UserDefaults.standard
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -20,13 +22,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // NOTE: Sets a UIWindow to window
         window = UIWindow(frame: UIScreen.main.bounds)
         // NOTE: set up of the TabBarController and adding the viewControllers
+        let loginSignupVC = LoginSignupViewController()
         let tabBarController = TabBarController()
         tabBarController.selectedIndex = 0
+        userDefault.set(false, forKey: "isUserLoggedIn")
+        userDefault.synchronize()
+        
+        if userDefault.bool(forKey: "isUserLoggedIn") {
+            window?.rootViewController = tabBarController
+        } else {
+            window?.rootViewController = loginSignupVC
+        }
         
         // NOTE: Setting the root
-        
-        let loginSignupVC = LoginSignupViewController()
-        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         // NOTE: Setting UINavBAr appearance
         UINavigationBar.appearance().barTintColor = .black

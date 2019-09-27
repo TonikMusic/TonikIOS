@@ -14,7 +14,6 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
 
         
-        
         // NOTE: homeview controller
         let home = HomeViewController()
         var homeIcon = UIImage(named: "home")
