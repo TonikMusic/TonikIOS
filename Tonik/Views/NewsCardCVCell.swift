@@ -26,7 +26,7 @@ class NewsCardCVCell: UICollectionViewCell {
     func setupText(){
         mainTitle = Label.newLabel(title: "MainTitle", textColor: .white, textSize: 50)
         subTitle = Label.newLabel(title: "SubTitle", textColor: .white, textSize: 25)
-        mainBody = Label.newLabel(title: "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", textColor: .white, textSize: 20)
+        mainBody = Label.newLabel(title: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but Ipsum", textColor: .white, textSize: 20)
         mainBody.numberOfLines = 100
         
         self.add(subview: mainTitle) { (v, p) in [
@@ -47,7 +47,6 @@ class NewsCardCVCell: UICollectionViewCell {
                 v.topAnchor.constraint(equalTo: subTitle.safeAreaLayoutGuide.bottomAnchor, constant: 5),
                 v.leadingAnchor.constraint(equalTo: subTitle.safeAreaLayoutGuide.leadingAnchor, constant: 0),
                 v.trailingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-                v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -25)
             ]}
         
         
