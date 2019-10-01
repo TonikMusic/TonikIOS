@@ -27,11 +27,8 @@
 		2BE60B232318414800262EE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BE60B212318414800262EE1 /* LaunchScreen.storyboard */; };
 		2BE60B2E2318414800262EE1 /* TonikTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE60B2D2318414800262EE1 /* TonikTests.swift */; };
 		2BF72B7A233BFCBA00E46A75 /* NewsCardCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF72B79233BFCBA00E46A75 /* NewsCardCVCell.swift */; };
-
-		7404E451233DED2400BD3157 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7404E450233DED2400BD3157 /* OnBoardingViewController.swift */; };
-
 		2BF72B7C233DB0AA00E46A75 /* NewsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF72B7B233DB0AA00E46A75 /* NewsHeaderView.swift */; };
-
+		7404E451233DED2400BD3157 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7404E450233DED2400BD3157 /* OnBoardingViewController.swift */; };
 		743A3980233BFF4C00DA22BC /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743A397F233BFF4C00DA22BC /* Stack.swift */; };
 		74CB1B6C233C1566001C5D30 /* LoginSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B28129E2326CF9A00B1FBD4 /* LoginSignUpView.swift */; };
 		74CBFD88232DB853006C7FCD /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CBFD87232DB853006C7FCD /* LogoView.swift */; };
@@ -79,11 +76,8 @@
 		2BE60B2D2318414800262EE1 /* TonikTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TonikTests.swift; sourceTree = "<group>"; };
 		2BE60B2F2318414800262EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BF72B79233BFCBA00E46A75 /* NewsCardCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCardCVCell.swift; sourceTree = "<group>"; };
-
-		7404E450233DED2400BD3157 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
-
 		2BF72B7B233DB0AA00E46A75 /* NewsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHeaderView.swift; sourceTree = "<group>"; };
-
+		7404E450233DED2400BD3157 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		743A397F233BFF4C00DA22BC /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = Tonik/Extension/Stack.swift; sourceTree = SOURCE_ROOT; };
 		74CBFD87232DB853006C7FCD /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		74CBFD89232EAB52006C7FCD /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };

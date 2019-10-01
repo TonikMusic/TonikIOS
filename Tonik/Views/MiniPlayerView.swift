@@ -69,28 +69,32 @@ class MiniPlayer: UIView {
         
         // NOTE: add to view with constraints
         self.add(subview: MPMusicImageView) { (v, p) in [
-            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -15),
+            
+            v.centerYAnchor.constraint(equalTo: p.safeAreaLayoutGuide.centerYAnchor, constant: -5),
             v.leadingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.leadingAnchor, constant: 8)
-            ]}
-        // NOTE: add to view with constraints
-        self.add(subview: MPMusicPlayingLabel) { (v, p) in [
-            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -25),
-            v.leadingAnchor.constraint(equalTo: MPMusicImageView.safeAreaLayoutGuide.trailingAnchor, constant: 8)
-            ]}
-        // NOTE: add to view with constraints
-        self.add(subview: MPBackButton) { (v, p) in [
-            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            v.leadingAnchor.constraint(equalTo: MPMusicPlayingLabel.safeAreaLayoutGuide.trailingAnchor, constant: 90)
-            ]}
-        // NOTE: add to view with constraints
-        self.add(subview: MPPlayButton) { (v, p) in [
-            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            v.leadingAnchor.constraint(equalTo: MPBackButton.safeAreaLayoutGuide.trailingAnchor, constant: 8)
             ]}
         
         self.add(subview: MPNextButton) { (v, p) in [
-            v.bottomAnchor.constraint(equalTo: p.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            v.leadingAnchor.constraint(equalTo: MPPlayButton.safeAreaLayoutGuide.trailingAnchor, constant: 8)
+            v.centerYAnchor.constraint(equalTo: p.safeAreaLayoutGuide.centerYAnchor),
+            v.trailingAnchor.constraint(equalTo: p.safeAreaLayoutGuide.trailingAnchor, constant: -8)
+            ]}
+        
+        
+        self.add(subview: MPPlayButton) { (v, p) in [
+            v.centerYAnchor.constraint(equalTo: p.safeAreaLayoutGuide.centerYAnchor),
+            v.trailingAnchor.constraint(equalTo: MPNextButton.safeAreaLayoutGuide.leadingAnchor, constant: -8)
+            ]}
+        
+        // NOTE: add to view with constraints
+        self.add(subview: MPBackButton) { (v, p) in [
+            v.centerYAnchor.constraint(equalTo: p.safeAreaLayoutGuide.centerYAnchor),
+            v.trailingAnchor.constraint(equalTo: MPPlayButton.safeAreaLayoutGuide.leadingAnchor, constant: -8)
+            ]}
+        
+        // NOTE: add to view with constraints
+        self.add(subview: MPMusicPlayingLabel) { (v, p) in [
+            v.centerYAnchor.constraint(equalTo: p.safeAreaLayoutGuide.centerYAnchor),
+            v.leadingAnchor.constraint(equalTo: MPMusicImageView.safeAreaLayoutGuide.trailingAnchor, constant: 8)
             ]}
     }
     
