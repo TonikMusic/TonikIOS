@@ -47,7 +47,6 @@ class HomeViewController: UIViewController {
             
             ]}
         
-        
     }
     
 }
@@ -144,6 +143,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: 0, height: 0)

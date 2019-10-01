@@ -147,22 +147,24 @@ class LoginSignUpView: UIView {
         toggleSwitch.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         toggleSwitch.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         toggleSwitch.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        toggleSwitch.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
         
         view.addSubview(artistLabel)
         view.sendSubviewToBack(artistLabel)
         artistLabel.translatesAutoresizingMaskIntoConstraints = false
-        artistLabel.leadingAnchor.constraint(equalTo: toggleSwitch.trailingAnchor, constant: 10).isActive = true
+        artistLabel.leadingAnchor.constraint(equalTo: toggleSwitch.trailingAnchor, constant: 0).isActive = true
         artistLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15).isActive = true
         artistLabel.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        
         
         view.addSubview(dateOfBirth)
         view.sendSubviewToBack(dateOfBirth)
         dateOfBirth.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        dateOfBirth.leadingAnchor.constraint(equalTo: artistLabel.trailingAnchor, constant: 50).isActive = true
+//        dateOfBirth.leadingAnchor.constraint(equalTo: artistLabel.trailingAnchor, constant: 20).isActive = true
         dateOfBirth.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         dateOfBirth.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
-        
+        dateOfBirth.widthAnchor.constraint(equalToConstant: 98).isActive = true
         
         
         

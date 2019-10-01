@@ -88,11 +88,11 @@ class LoginSignupViewController: UIViewController {
     
     @objc func didPressLoginSignupBtn() {
         if self.loginSignUpBtn.currentTitle == "Sign Up" {
-//            self.dismiss(animated: true, completion: nil)
             print("pressed")
             let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .horizontal
             let onBoardingVC = OnBoardingViewController(collectionViewLayout: layout)
-//            self.navigationController?.pushViewController(onBoardingVC, animated: true)
+            self.navigationController?.pushViewController(onBoardingVC, animated: true)
             
         } else {
             // NOTE: Process the user to login
