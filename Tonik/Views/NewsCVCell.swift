@@ -12,6 +12,7 @@ import UIKit
 class NewsCVCell: UICollectionViewCell {
     static let reUseID = "NewsCell"
     var newsCollectionView: UICollectionView!
+    let flowLayout = UICollectionViewFlowLayout()
     
     
     override init(frame: CGRect) {
@@ -27,7 +28,6 @@ class NewsCVCell: UICollectionViewCell {
     
     func setUpNewsCollectionView(){
         // NOTE: sets the flow layout and makes the scroll horizontal
-        let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         // NOTE: init the collection view
         newsCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height), collectionViewLayout: flowLayout)
@@ -61,6 +61,9 @@ extension NewsCVCell: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = newsCollectionView.dequeueReusableCell(withReuseIdentifier: NewsCardCVCell.reUseId, for: indexPath) as! NewsCardCVCell
         
+        
+        cell.layer.cornerRadius = 15
+        
         return cell
     }
     
@@ -76,6 +79,7 @@ extension NewsCVCell: UICollectionViewDataSource {
 // NOTE: collectionView delegate extension
 extension NewsCVCell: UICollectionViewDelegate {
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
@@ -87,14 +91,19 @@ extension NewsCVCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: newsCollectionView.bounds.width, height: newsCollectionView.bounds.height - 175)
+        return CGSize(width: newsCollectionView.bounds.width - 25, height: newsCollectionView.bounds.height - 175)
     }
     
     // NOTE: padding
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let cellWidth : CGFloat = newsCollectionView.bounds.width - 25
+
+        let numberOfCells = floor(self.frame.size.width / cellWidth)
+        let edgeInsets = (self.frame.size.width - (numberOfCells * cellWidth)) / (numberOfCells + 1)
+
+        return UIEdgeInsets(top: 0, left: edgeInsets, bottom: 0, right: edgeInsets)
     }
     
     
@@ -103,6 +112,7 @@ extension NewsCVCell: UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 50
     }
+    
     
 
 }
