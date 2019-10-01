@@ -98,7 +98,12 @@ extension FeaturedCVCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 75, left: 25, bottom: 25, right: 25)
+        let cellWidth : CGFloat = artistsCollectionView.bounds.width - 100
+
+        let numberOfCells = floor(self.frame.size.width / cellWidth)
+        let edgeInsets = (self.frame.size.width - (numberOfCells * cellWidth)) / (numberOfCells + 1)
+
+        return UIEdgeInsets(top: 0, left: edgeInsets, bottom: 0, right: edgeInsets)
     }
     
     func collectionView(_ collectionView: UICollectionView,
