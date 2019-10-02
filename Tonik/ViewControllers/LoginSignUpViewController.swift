@@ -13,12 +13,7 @@ import UIKit
 
 class LoginSignupViewController: UIViewController {
     
-    // NOTE: Instatiating views
-    var loginSignupView = LoginSignUpView()
-    var logoView = LogoView()
-    let dontHaveAccountlable = Label.newLabel(title: "Don't have an account?", textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), textSize: 16)
-    let createAccountBtn = Button.customButton(title: "Sign Up", titleColor: #colorLiteral(red: 0.3921568627, green: 0.01960784314, blue: 0.5607843137, alpha: 1), cornerRadius: 0, backgroundColor: .clear)
-    let loginSignUpBtn = Button.customButton(title: "Log In", titleColor: .white, cornerRadius: 30, backgroundColor: #colorLiteral(red: 0.3921568627, green: 0.01960784314, blue: 0.5607843137, alpha: 1))
+    //NOTE: Instantiating variables
     lazy var viewHeight = self.view.frame.height
     lazy var viewWidth = self.view.frame.width
     lazy var viewCenterY = self.view.frame.midY
@@ -26,6 +21,15 @@ class LoginSignupViewController: UIViewController {
     var addHeightPaddingToLoginSignupView: NSLayoutConstraint!
     var addYAxisToLogoView: NSLayoutConstraint!
     let datePickerView: UIDatePicker = UIDatePicker()
+    
+    // NOTE: Instatiating views
+    var loginSignupView = LoginSignUpView()
+    var logoView = LogoView()
+    let dontHaveAccountlable = Label.newLabel(title: "Don't have an account?", textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), textSize: 16)
+    let createAccountBtn = Button.customButton(title: "Sign Up", titleColor: #colorLiteral(red: 0.3921568627, green: 0.01960784314, blue: 0.5607843137, alpha: 1), cornerRadius: 0, backgroundColor: .clear)
+    let loginSignUpBtn = Button.customButton(title: "Log In", titleColor: .white, cornerRadius: 30, backgroundColor: #colorLiteral(red: 0.3921568627, green: 0.01960784314, blue: 0.5607843137, alpha: 1))
+    
+    
     
     
     
@@ -43,7 +47,7 @@ class LoginSignupViewController: UIViewController {
   
     
     // NOTE: This function sets the login and sign up view components
-    func setUpLogin() {
+    private func setUpLogin() {
         
         // NOTE: Adding constraints
         view.addSubview(loginSignupView)
@@ -117,7 +121,7 @@ class LoginSignupViewController: UIViewController {
     }
 
     // NOTE: This funciton sets up the date picker along with a tool bar
-    func showDatePicker() {
+    private func showDatePicker() {
         
         datePickerView.datePickerMode = .date
         datePickerView.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
@@ -137,7 +141,7 @@ class LoginSignupViewController: UIViewController {
     }
     
     //NOTE: Updates super view visibility when keyboard is called
-    func updateViewToUseKeyBorad() {
+    private func updateViewToUseKeyBorad() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardDidHideNotification, object: nil)
         hideKeyboardTapped()
@@ -146,7 +150,7 @@ class LoginSignupViewController: UIViewController {
     
     
     // NOTE: This function animates the given views
-    func addAnimationToViews() {
+    private func addAnimationToViews() {
         
         if  createAccountBtn.currentTitle == "Sign Up" {
             

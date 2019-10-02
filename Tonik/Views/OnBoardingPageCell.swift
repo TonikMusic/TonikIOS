@@ -13,7 +13,7 @@ class OnBoardingPageCell: UICollectionViewCell {
     
     static let cellId = "cellId"
     let onBoardingImg = CustomImage.image(name: "")
-    let onBoardingLabel = Label.newLabel(title: "", textColor: #colorLiteral(red: 0.568627451, green: 0.4705882353, blue: 0.4705882353, alpha: 1), textSize: 16)
+    let onBoardingLabel = Label.newLabel(title: "", textColor: #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1), textSize: 16)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -12,12 +12,12 @@ import UIKit
 
 class Stack: UIStackView {
     
-    public static func createStackView(with views: [UIView]) -> UIStackView {
+    public static func createStackView(with views: [UIView], alignment: UIStackView.Alignment, distribution: Distribution, axis: NSLayoutConstraint.Axis, spacing: CGFloat) -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: views)
-        stackView.distribution = .fillEqually
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.spacing = 2
+        stackView.distribution = distribution
+        stackView.axis = axis
+        stackView.alignment = alignment
+        stackView.spacing = spacing
         
         return stackView
     }
